@@ -1,4 +1,4 @@
-import { Leaf, LeafyGreen, Flower } from "lucide-react";
+import { Leaf, LeafyGreen, Flower, Sparkles } from "lucide-react";
 
 const services = [
   {
@@ -19,6 +19,12 @@ const services = [
     description: "Comprehensive solutions for hotels and malls with 25+ statement plants.",
     price: "From €500/month",
   },
+  {
+    icon: Sparkles,
+    title: "Custom Solutions",
+    description: "Tailored plant arrangements and maintenance plans for unique spaces.",
+    price: "Custom pricing",
+  },
 ];
 
 export const Services = () => {
@@ -36,7 +42,7 @@ export const Services = () => {
             Choose from our flexible packages designed to bring life to any space
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
