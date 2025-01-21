@@ -1,4 +1,4 @@
-import { Leaf, LeafyGreen, Flower, Sparkles } from "lucide-react";
+import { Leaf, LeafyGreen, Flower, Sparkles, CalendarDays } from "lucide-react";
 
 const services = [
   {
@@ -26,6 +26,13 @@ const services = [
     price: "Custom pricing",
   },
 ];
+
+const comingSoonService = {
+  icon: CalendarDays,
+  title: "Event Rentals",
+  description: "Transform your special occasions with our stunning plant arrangements. Perfect for weddings, corporate events, and photoshoots.",
+  price: "Coming Soon",
+};
 
 export const Services = () => {
   return (
@@ -55,6 +62,17 @@ export const Services = () => {
               <p className="font-medium text-sage-500">{service.price}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-8 max-w-4xl mx-auto">
+          <div 
+            className="p-8 rounded-xl bg-white border border-gray-100 hover:shadow-lg transition-shadow animate-fade-up w-full"
+            style={{ animationDelay: "500ms" }}
+          >
+            <comingSoonService.icon className="w-12 h-12 text-sage-300 mb-4 mx-auto" />
+            <h3 className="text-2xl font-semibold mb-3 text-center">{comingSoonService.title}</h3>
+            <p className="text-gray-600 mb-4 text-center max-w-2xl mx-auto">{comingSoonService.description}</p>
+            <p className="font-medium text-sage-500 text-center">{comingSoonService.price}</p>
+          </div>
         </div>
       </div>
     </section>
