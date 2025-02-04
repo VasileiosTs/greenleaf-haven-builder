@@ -1,24 +1,47 @@
 import { ArrowRight, Leaf, Flower } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const galleries = [
   {
     title: "Office Spaces",
-    image: "photo-1721322800607-8c38375eef04",
+    images: [
+      "photo-1497215728101-856f4ea42174",
+      "photo-1497366216548-37526070297c",
+      "photo-1497366811353-6870744d04b2"
+    ],
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
     title: "Restaurants & Cafes",
-    image: "photo-1506744038136-46273834b3fb",
+    images: [
+      "photo-1559339352-11d035aa65de",
+      "photo-1584346133934-a3bd1c5c3018",
+      "photo-1517248135467-4c7edcad34c4"
+    ],
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
     title: "Hotels & Resorts",
-    image: "photo-1518495973542-4542c06a5843",
+    images: [
+      "photo-1542314831-068cd1dbfeeb",
+      "photo-1566073771259-6a8506099945",
+      "photo-1551882547-ff40c63fe5fa"
+    ],
     description: "Luxury environments complemented by premium plant arrangements"
   },
   {
     title: "Event Setups",
-    image: "photo-1465146344425-f00d5f5c8f07",
+    images: [
+      "photo-1519167758481-83f550bb49b3",
+      "photo-1464366400600-7168b8af9bc3",
+      "photo-1519225421980-715cb0215aed"
+    ],
     description: "Temporary installations for special occasions"
   }
 ];
@@ -57,15 +80,25 @@ export const Gallery = () => {
               className="group relative overflow-hidden rounded-2xl animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <img
-                src={`https://images.unsplash.com/${gallery.image}`}
-                alt={gallery.title}
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {gallery.images.map((image, imageIndex) => (
+                    <CarouselItem key={imageIndex}>
+                      <img
+                        src={`https://images.unsplash.com/${image}`}
+                        alt={`${gallery.title} ${imageIndex + 1}`}
+                        className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white pointer-events-none">
                 <h3 className="text-xl font-semibold mb-2">{gallery.title}</h3>
                 <p className="text-sm text-gray-200 mb-4">{gallery.description}</p>
-                <button className="inline-flex items-center text-sm font-medium">
+                <button className="inline-flex items-center text-sm font-medium pointer-events-auto">
                   View Projects
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
