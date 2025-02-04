@@ -1,47 +1,24 @@
 import { ArrowRight, Leaf, Flower } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const galleries = [
   {
     title: "Office Spaces",
-    images: [
-      "photo-1524758631624-e2822e304c36", // Modern office with plants
-      "photo-1497215842964-222b430dc094", // Office workspace with greenery
-      "photo-1497366754035-f200968a6e72"  // Corporate space with plants
-    ],
+    image: "photo-1721322800607-8c38375eef04",
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
     title: "Restaurants & Cafes",
-    images: [
-      "photo-1600585152220-90363fe7e115", // Restaurant with hanging plants
-      "photo-1554118811-1e0d58224f24", // Cafe with botanical decor
-      "photo-1559339352-11d035aa65de"  // Restaurant interior with greenery
-    ],
+    image: "photo-1506744038136-46273834b3fb",
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
     title: "Hotels & Resorts",
-    images: [
-      "photo-1582719508461-905c673771fd", // Hotel lobby with large plants
-      "photo-1542314831-068cd1dbfeeb", // Luxury hotel with indoor garden
-      "photo-1520250497591-112f2f40a3f4"  // Resort with tropical plants
-    ],
+    image: "photo-1518495973542-4542c06a5843",
     description: "Luxury environments complemented by premium plant arrangements"
   },
   {
     title: "Event Setups",
-    images: [
-      "photo-1519167758481-83f550bb49b3", // Event space with floral arrangements
-      "photo-1523438885200-e635ba2c371e", // Wedding setup with plants
-      "photo-1469371670807-013ccf25f16a"  // Special event with botanical decor
-    ],
+    image: "photo-1465146344425-f00d5f5c8f07",
     description: "Temporary installations for special occasions"
   }
 ];
@@ -80,25 +57,15 @@ export const Gallery = () => {
               className="group relative overflow-hidden rounded-2xl animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <Carousel className="w-full">
-                <CarouselContent>
-                  {gallery.images.map((image, imageIndex) => (
-                    <CarouselItem key={imageIndex}>
-                      <img
-                        src={`https://images.unsplash.com/${image}`}
-                        alt={`${gallery.title} ${imageIndex + 1}`}
-                        className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-4" />
-                <CarouselNext className="right-4" />
-              </Carousel>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white pointer-events-none">
+              <img
+                src={`https://images.unsplash.com/${gallery.image}`}
+                alt={gallery.title}
+                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white">
                 <h3 className="text-xl font-semibold mb-2">{gallery.title}</h3>
                 <p className="text-sm text-gray-200 mb-4">{gallery.description}</p>
-                <button className="inline-flex items-center text-sm font-medium pointer-events-auto">
+                <button className="inline-flex items-center text-sm font-medium">
                   View Projects
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
