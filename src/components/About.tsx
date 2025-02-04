@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Leaf, LeafyGreen } from "lucide-react";
 
 export const About = () => {
   const benefits = [
@@ -9,7 +9,19 @@ export const About = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="py-24 px-4 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-12 right-10 animate-fade-in opacity-30">
+          <Leaf className="w-20 h-20 text-sage-200" />
+        </div>
+        <div className="absolute bottom-20 left-10 animate-fade-in opacity-20" style={{ animationDelay: "200ms" }}>
+          <LeafyGreen className="w-24 h-24 text-sage-200" />
+        </div>
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-sage-50 opacity-20 animate-fade-in"
+             style={{ animationDelay: "300ms" }} />
+      </div>
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">

@@ -36,7 +36,19 @@ const comingSoonService = {
 
 export const Services = () => {
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="py-24 px-4 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 animate-fade-in opacity-30">
+          <Flower className="w-16 h-16 text-sage-300" />
+        </div>
+        <div className="absolute bottom-32 right-16 animate-fade-in opacity-20" style={{ animationDelay: "200ms" }}>
+          <LeafyGreen className="w-20 h-20 text-sage-200" />
+        </div>
+        <div className="absolute top-1/4 right-1/3 w-32 h-32 rounded-full bg-sage-50 opacity-20 animate-fade-in"
+             style={{ animationDelay: "300ms" }} />
+      </div>
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">

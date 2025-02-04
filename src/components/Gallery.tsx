@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Leaf, Flower } from "lucide-react";
 
 const galleries = [
   {
@@ -25,7 +25,19 @@ const galleries = [
 
 export const Gallery = () => {
   return (
-    <section className="py-24 px-4 bg-sage-50">
+    <section className="py-24 px-4 bg-sage-50 relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-16 right-16 animate-fade-in opacity-30">
+          <Leaf className="w-16 h-16 text-sage-300" />
+        </div>
+        <div className="absolute bottom-24 left-24 animate-fade-in opacity-20" style={{ animationDelay: "200ms" }}>
+          <Flower className="w-20 h-20 text-sage-300" />
+        </div>
+        <div className="absolute top-1/3 left-1/4 w-36 h-36 rounded-full bg-sage-100 opacity-20 animate-fade-in"
+             style={{ animationDelay: "300ms" }} />
+      </div>
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">
