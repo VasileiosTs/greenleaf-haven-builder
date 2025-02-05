@@ -7,27 +7,23 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&q=80")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
         }}
       />
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-sage-300/40 backdrop-blur-sm -z-10" />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] -z-10" />
 
       {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top left leaf */}
         <div className="absolute top-10 left-10 animate-fade-in opacity-50">
-          <Leaf className="w-16 h-16 text-sage-200" />
+          <Leaf className="w-16 h-16 text-sage-100" />
         </div>
-        {/* Top right flower */}
         <div className="absolute top-20 right-20 animate-fade-in opacity-50" style={{ animationDelay: "200ms" }}>
-          <Flower className="w-20 h-20 text-sage-300" />
+          <Flower className="w-20 h-20 text-sage-100" />
         </div>
-        {/* Bottom left leafy green */}
         <div className="absolute bottom-20 left-32 animate-fade-in opacity-50" style={{ animationDelay: "400ms" }}>
-          <LeafyGreen className="w-24 h-24 text-sage-200" />
+          <LeafyGreen className="w-24 h-24 text-sage-100" />
         </div>
-        {/* Decorative shapes */}
         <div className="absolute top-1/4 left-1/3 w-32 h-32 rounded-full bg-sage-50 opacity-30 animate-fade-in" 
              style={{ animationDelay: "100ms" }} />
         <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-sage-100 opacity-20 animate-fade-in"
