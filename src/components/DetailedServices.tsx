@@ -1,4 +1,4 @@
-import { Building2, Home, UtensilsCrossed, Hotel } from "lucide-react";
+import { Building2, Home, UtensilsCrossed, Hotel, Stethoscope, PartyPopper } from "lucide-react";
 
 const services = [
   {
@@ -44,6 +44,28 @@ const services = [
       "Scalable solutions for multi-location properties"
     ],
     cta: "Book a Consultation",
+  },
+  {
+    icon: Stethoscope,
+    title: "Healthcare Facility Plant Solutions",
+    description: "Create a healing environment with carefully selected plants for hospitals, doctors' offices, and health departments. Our solutions focus on promoting wellness and maintaining strict hygiene standards.",
+    features: [
+      "Antimicrobial plant selections",
+      "Healthcare-compliant maintenance protocols",
+      "Evidence-based biophilic design"
+    ],
+    cta: "Schedule Healthcare Consultation",
+  },
+  {
+    icon: PartyPopper,
+    title: "Event & Special Occasion Greenery",
+    description: "Transform your events with stunning plant arrangements and living decor. Perfect for corporate gatherings, weddings, conferences, and special celebrations.",
+    features: [
+      "Custom event-specific designs",
+      "Short-term and long-term rental options",
+      "Professional setup and removal"
+    ],
+    cta: "Plan Your Event",
   }
 ];
 
