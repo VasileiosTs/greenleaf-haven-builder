@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Send, TikTok, Pinterest } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Send, Share2, BookMarked } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -13,10 +13,10 @@ export const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="hover:text-sage-100 transition-colors">
-                <TikTok className="w-5 h-5" />
+                <Share2 className="w-5 h-5" />
               </a>
               <a href="#" className="hover:text-sage-100 transition-colors">
-                <Pinterest className="w-5 h-5" />
+                <BookMarked className="w-5 h-5" />
               </a>
               <a href="#" className="hover:text-sage-100 transition-colors">
                 <Facebook className="w-5 h-5" />
