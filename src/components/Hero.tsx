@@ -37,7 +37,7 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-sage-300">
           Green Spaces Made Simple
         </h1>
-        <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-sage-100 mb-8 max-w-2xl mx-auto">
           Transform your space with hassle-free, sustainable plant solutions tailored for offices, hotels, restaurants, and more.
         </p>
         <button className="inline-flex items-center px-6 py-3 bg-sage-300 text-white rounded-lg hover:bg-sage-400 transition-colors group backdrop-blur-sm font-bold">
