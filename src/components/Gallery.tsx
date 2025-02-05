@@ -3,23 +3,33 @@ import { ArrowRight, Leaf, Flower } from "lucide-react";
 const galleries = [
   {
     title: "Office Spaces",
-    image: "photo-1721322800607-8c38375eef04",
+    image: "photo-1545324418-cc1a3fa10c00",
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
     title: "Restaurants & Cafes",
-    image: "photo-1506744038136-46273834b3fb",
+    image: "photo-1584132967334-10e028bd69f7",
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
     title: "Hotels & Resorts",
-    image: "photo-1518495973542-4542c06a5843",
+    image: "photo-1582719478250-c89cae4dc85b",
     description: "Luxury environments complemented by premium plant arrangements"
   },
   {
+    title: "Healthcare Facilities",
+    image: "photo-1586671267731-da2cf3ceeb80",
+    description: "Healing environments with antimicrobial plant selections"
+  },
+  {
     title: "Event Setups",
-    image: "photo-1465146344425-f00d5f5c8f07",
-    description: "Temporary installations for special occasions"
+    image: "photo-1523438885200-e635ba2c371e",
+    description: "Stunning plant arrangements for special occasions"
+  },
+  {
+    title: "Vacation Rentals",
+    image: "photo-1595246140962-93c06feddc6d",
+    description: "Airbnb and rental properties transformed with greenery"
   }
 ];
 
@@ -50,7 +60,7 @@ export const Gallery = () => {
             Discover how BloominTales has transformed commercial spaces with vibrant greenery
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleries.map((gallery, index) => (
             <div
               key={index}
