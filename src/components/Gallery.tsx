@@ -35,49 +35,51 @@ const galleries = [
 
 export const Gallery = () => {
   return (
-    <section className="py-24 px-4 bg-sage-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-sage-50 to-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 right-16 animate-fade-in opacity-30">
+        <div className="absolute top-16 right-16 animate-fade-in opacity-30 hidden md:block">
           <Leaf className="w-16 h-16 text-sage-300" />
         </div>
-        <div className="absolute bottom-24 left-24 animate-fade-in opacity-20" style={{ animationDelay: "200ms" }}>
+        <div className="absolute bottom-24 left-24 animate-fade-in opacity-20 hidden md:block" style={{ animationDelay: "200ms" }}>
           <Flower className="w-20 h-20 text-sage-300" />
         </div>
-        <div className="absolute top-1/3 left-1/4 w-36 h-36 rounded-full bg-sage-100 opacity-20 animate-fade-in"
+        <div className="absolute top-1/3 left-1/4 w-36 h-36 rounded-full bg-sage-100/50 opacity-20 animate-fade-in hidden md:block"
              style={{ animationDelay: "300ms" }} />
       </div>
 
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-up">
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">
+        <div className="text-center mb-12 md:mb-16 animate-fade-up">
+          <span className="inline-block px-4 py-1.5 mb-4 md:mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">
             Our Gallery
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
             See Our Transformations
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm md:text-base">
             Discover how BloominTales has transformed commercial spaces with vibrant greenery
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {galleries.map((gallery, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl animate-fade-up"
+              className="group relative overflow-hidden rounded-2xl animate-fade-up shadow-lg hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <img
-                src={`https://images.unsplash.com/${gallery.image}`}
-                alt={gallery.title}
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-semibold mb-2">{gallery.title}</h3>
-                <p className="text-sm text-gray-200 mb-4">{gallery.description}</p>
-                <button className="inline-flex items-center text-sm font-medium">
+              <div className="aspect-[4/3]">
+                <img
+                  src={`https://images.unsplash.com/${gallery.image}`}
+                  alt={gallery.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 md:p-6 text-white">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">{gallery.title}</h3>
+                <p className="text-sm text-gray-200 mb-4 line-clamp-2">{gallery.description}</p>
+                <button className="inline-flex items-center text-sm font-medium group/btn">
                   View Projects
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
