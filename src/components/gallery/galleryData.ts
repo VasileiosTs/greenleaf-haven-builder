@@ -9,13 +9,13 @@ export const galleries = [
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
-    title: "Retail Spaces",
+    title: "Retail Shops",
     images: [
-      "/lovable-uploads/3cd1ca92-4631-45c2-a1aa-6c856181b660.png",
-      "/lovable-uploads/2ef1ecaf-9c8d-43ec-b97f-1a2be0f5b72e.png",
-      "/lovable-uploads/f009ae56-662f-4de9-ac56-0acc768e2f2a.png"
+      "/lovable-uploads/9a04142b-5720-4cde-b172-e57c46f16d16.png",
+      "/lovable-uploads/5e898ea1-ce68-4e14-a4ff-856f24627993.png",
+      "/lovable-uploads/a5b2ff7b-8206-48cf-be2e-b5f10a387192.png"
     ],
-    description: "Create inviting atmospheres with strategic plant placement"
+    description: "Transform retail environments with strategic plant placement"
   },
   {
     title: "Healthcare Facilities",
