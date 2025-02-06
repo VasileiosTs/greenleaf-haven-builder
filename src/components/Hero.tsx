@@ -70,6 +70,31 @@ export const Hero = () => {
         >
           <LeafyGreen className="w-24 h-24 text-sage-200" />
         </motion.div>
+        {/* New leaf patterns */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute top-1/4 left-1/4"
+        >
+          <Leaf className="w-16 h-16 text-sage-200 rotate-45" />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="absolute bottom-1/3 right-1/3"
+        >
+          <LeafyGreen className="w-20 h-20 text-sage-200 -rotate-12" />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 0.25, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="absolute top-1/3 right-20"
+        >
+          <Leaf className="w-12 h-12 text-sage-200 rotate-90" />
+        </motion.div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.2, scale: 1 }}

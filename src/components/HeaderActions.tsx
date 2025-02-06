@@ -27,6 +27,16 @@ export const HeaderActions = ({ isScrolled, user }: HeaderActionsProps) => {
 
   return (
     <div className="flex items-center space-x-6">
+      <a 
+        href="mailto:info@bloomintales.com" 
+        className={`flex items-center space-x-2 hover:text-sage-500 transition-colors ${
+          isScrolled ? "text-sage-400" : "text-sage-400"
+        }`}
+      >
+        <Mail className="w-5 h-5" />
+        <span className="hidden md:inline">info@bloomintales.com</span>
+      </a>
+
       <Select value={language} onValueChange={(value: 'en' | 'el') => setLanguage(value)}>
         <SelectTrigger className="w-[100px] bg-white/95 border-sage-200">
           <div className="flex items-center gap-2">
@@ -39,16 +49,6 @@ export const HeaderActions = ({ isScrolled, user }: HeaderActionsProps) => {
           <SelectItem value="el">Ελληνικά</SelectItem>
         </SelectContent>
       </Select>
-
-      <a 
-        href="mailto:info@bloomintales.com" 
-        className={`flex items-center space-x-2 hover:text-sage-500 transition-colors ${
-          isScrolled ? "text-sage-400" : "text-sage-400"
-        }`}
-      >
-        <Mail className="w-5 h-5" />
-        <span className="hidden md:inline">info@bloomintales.com</span>
-      </a>
 
       {user && (
         <div className="flex items-center space-x-4">
