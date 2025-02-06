@@ -7,7 +7,7 @@ export const About = () => {
     "Flexible Plans: Choose from small, medium, and large packages to suit your needs",
     "Sustainable Solutions: Eco-friendly and cost-effective plant leasing for your business",
     "Fresh Look, Always: Regular plant refreshes to keep your space vibrant and inviting",
-    "Environmental Leadership: We help businesses meet their sustainability goals through biophilic design and carbon-reducing plant solutions, demonstrating corporate environmental responsibility",
+    "Environmental Impact: We help businesses meet their sustainability goals through biophilic design and carbon-reducing plant solutions, demonstrating corporate environmental responsibility",
   ];
 
   return (
