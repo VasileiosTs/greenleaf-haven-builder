@@ -111,7 +111,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Benefits Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto animate-fade-up delay-200 px-4 mt-16 mb-16">
         {benefits.map((benefit, index) => (
           <div 
@@ -129,7 +128,6 @@ export const Hero = () => {
         ))}
       </div>
 
-      {/* Decorative Elements */}
       <div className="absolute top-1/4 left-0 w-64 h-64 bg-sage-100/30 rounded-full filter blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sage-200/20 rounded-full filter blur-3xl animate-pulse delay-1000" />
     </section>
