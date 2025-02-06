@@ -45,12 +45,12 @@ export const galleries = [
     description: "Add natural ambiance to dining spaces"
   },
   {
-    title: "Corporate Offices",
+    title: "Events & Exhibitions",
     images: [
-      "/lovable-uploads/6b609601-92b4-4b40-9688-1e27254eb015.png",
-      "/lovable-uploads/bc316bc6-9097-4030-b374-22976976e9a9.png",
-      "/lovable-uploads/f8df80d0-0198-47ed-882b-6008ab40de87.png"
+      "/lovable-uploads/5c81b962-87c9-4f7c-9f9c-5c834047b95d.png",
+      "/lovable-uploads/5d193498-bb32-46b4-9182-f8ff2e7c2632.png",
+      "/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png"
     ],
-    description: "Improve air quality and employee wellbeing"
+    description: "Transform event spaces with stunning plant displays and arrangements"
   }
 ];
