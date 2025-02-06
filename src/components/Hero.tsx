@@ -61,7 +61,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-6 lg:space-y-8 max-w-xl mx-auto lg:mx-0">
+          <div className="order-2 lg:order-1 space-y-6 lg:space-y-8 max-w-xl mx-auto lg:mx-0">
             <span className="inline-block px-4 py-2 bg-sage-100/50 rounded-full text-sage-500 text-sm font-medium">
               Premium Plant Leasing Solutions
             </span>
@@ -104,10 +104,10 @@ export const Hero = () => {
           </div>
 
           {/* Right Column - Image */}
-          <div className="relative aspect-[4/3] lg:aspect-square">
-            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl">
+          <div className="order-1 lg:order-2 relative aspect-[4/3] lg:aspect-square">
+            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
               <img
-                src="/lovable-uploads/7a6ee049-d995-4058-9b8f-7e42f64b0407.png"
+                src="/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png"
                 alt="Modern office with plants"
                 className="w-full h-full object-cover"
               />
