@@ -51,13 +51,13 @@ export const Gallery = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 animate-fade-up">
           <span className="inline-block px-4 py-1.5 mb-4 md:mb-6 text-sm font-medium bg-sage-100 text-sage-500 rounded-full">
-            Our Gallery
+            Gallery
           </span>
           <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
             See Our Transformations
           </h2>
           <p className="text-gray-600 text-sm md:text-base">
-            Discover how BloominTales has transformed commercial spaces with vibrant greenery
+            Discover how plants has transformed spaces in vibrant green and healthy spots
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
