@@ -6,8 +6,15 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export const Header = () => {
+  const { setLanguage, t } = useLanguage();
+
+  const handleLanguageChange = (lang: 'en' | 'el') => {
+    setLanguage(lang);
+  };
+
   return (
     <header className="w-full bg-white shadow-sm py-4 px-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
