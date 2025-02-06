@@ -7,7 +7,7 @@ const plans = [
     price: "50",
     description: "Perfect for small offices and retail spaces up to 50 m²",
     features: [
-      "2-3 carefully selected plants",
+      "3-5 carefully selected plants",
       "Monthly maintenance visits",
       "Plant health monitoring",
       "Free replacements if needed",
@@ -25,7 +25,7 @@ const plans = [
     price: "100",
     description: "Ideal for medium-sized spaces between 50-100 m²",
     features: [
-      "5-8 curated plants",
+      "6-10 curated plants",
       "Bi-weekly maintenance visits",
       "Plant health monitoring",
       "Free replacements if needed",
@@ -45,7 +45,7 @@ const plans = [
     price: "200",
     description: "Designed for large commercial spaces over 100 m²",
     features: [
-      "10+ premium plants",
+      "10-15 premium plants",
       "Weekly maintenance visits",
       "Plant health monitoring",
       "Priority replacements",
