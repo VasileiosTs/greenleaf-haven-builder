@@ -30,12 +30,12 @@ const benefits = [
     icon: TreePine,
     title: "Restaurants",
     description: "Add natural ambiance to dining spaces",
-    image: "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png"
+    image: "/lovable-uploads/5c81b962-87c9-4f7c-9f9c-5c834047b95d.png"
   },
   {
     icon: Sprout,
     title: "Café",
-    description: "Improve air quality and employee wellbeing",
+    description: "Create cozy atmosphere for customers",
     image: "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png"
   }
 ];
