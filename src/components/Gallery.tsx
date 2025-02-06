@@ -1,34 +1,65 @@
 import { ArrowRight, Leaf, Flower } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const galleries = [
   {
     title: "Office Spaces",
-    image: "photo-1545324418-cc1a3fa10c00",
+    images: [
+      "photo-1545324418-cc1a3fa10c00",
+      "photo-1497366754035-f200968a6e72",
+      "photo-1497366811353-6870744d04b2"
+    ],
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
     title: "Restaurants & Cafes",
-    image: "photo-1584132967334-10e028bd69f7",
+    images: [
+      "photo-1584132967334-10e028bd69f7",
+      "photo-1559925393-8be0ec4767c8",
+      "photo-1559329007-40df8a9345d8"
+    ],
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
     title: "Hotels & Resorts",
-    image: "photo-1582719478250-c89cae4dc85b",
+    images: [
+      "photo-1582719478250-c89cae4dc85b",
+      "photo-1566073771259-6a8506099945",
+      "photo-1564501049412-61c2a3083791"
+    ],
     description: "Luxury environments complemented by premium plant arrangements"
   },
   {
     title: "Healthcare Facilities",
-    image: "photo-1586671267731-da2cf3ceeb80",
+    images: [
+      "photo-1586671267731-da2cf3ceeb80",
+      "photo-1519494026892-80bbd2d6fd0d",
+      "photo-1538108149393-fbbd81895907"
+    ],
     description: "Healing environments with antimicrobial plant selections"
   },
   {
     title: "Event Setups",
-    image: "photo-1523438885200-e635ba2c371e",
+    images: [
+      "photo-1523438885200-e635ba2c371e",
+      "photo-1519167758481-83f1abed1c0c",
+      "photo-1464366400600-7168b8af9bc3"
+    ],
     description: "Stunning plant arrangements for special occasions"
   },
   {
     title: "Vacation Rentals",
-    image: "photo-1595246140962-93c06feddc6d",
+    images: [
+      "photo-1595246140962-93c06feddc6d",
+      "photo-1595246140962-93c06feddc6e",
+      "photo-1595246140962-93c06feddc6f"
+    ],
     description: "Airbnb and rental properties transformed with greenery"
   }
 ];
@@ -67,13 +98,23 @@ export const Gallery = () => {
               className="group relative overflow-hidden rounded-2xl animate-fade-up shadow-lg hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="aspect-[4/3]">
-                <img
-                  src={`https://images.unsplash.com/${gallery.image}`}
-                  alt={gallery.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {gallery.images.map((image, imageIndex) => (
+                    <CarouselItem key={imageIndex}>
+                      <div className="aspect-[4/3]">
+                        <img
+                          src={`https://images.unsplash.com/${image}`}
+                          alt={`${gallery.title} ${imageIndex + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 md:p-6 text-white">
                 <h3 className="text-lg md:text-xl font-semibold mb-2">{gallery.title}</h3>
                 <p className="text-sm text-gray-200 mb-4 line-clamp-2">{gallery.description}</p>
