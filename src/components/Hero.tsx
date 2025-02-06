@@ -9,37 +9,37 @@ export const Hero = () => {
       icon: Building2,
       title: "Offices",
       description: "Boost productivity and create a calming workspace",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png"
     },
     {
       icon: ShoppingBag,
       title: "Retail",
       description: "Enhance customer experience and store aesthetics",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/5d193498-bb32-46b4-9182-f8ff2e7c2632.png"
     },
     {
       icon: HeartPulse,
       title: "Healthcare",
       description: "Promote healing and reduce stress levels",
-      image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/379bb504-cde2-4ab4-b8f1-b75c36c1f6af.png"
     },
     {
       icon: Home,
       title: "Hotels & Airbnb",
       description: "Create welcoming and luxurious environments",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/a2b1cc9e-3b21-4f02-9233-e296082187bb.png"
     },
     {
       icon: Sprout,
       title: "Café",
       description: "Add natural ambiance to dining spaces",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png"
     },
     {
       icon: TreePine,
       title: "Corporate",
       description: "Improve air quality and employee wellbeing",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+      image: "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png"
     }
   ];
 

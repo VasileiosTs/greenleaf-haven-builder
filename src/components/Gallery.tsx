@@ -11,56 +11,56 @@ const galleries = [
   {
     title: "Office Spaces",
     images: [
-      "photo-1545324418-cc1a3fa10c00",
+      "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png",
       "photo-1497366754035-f200968a6e72",
       "photo-1497366811353-6870744d04b2"
     ],
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
-    title: "Restaurants & Cafes",
+    title: "Retail Spaces",
     images: [
-      "photo-1584132967334-10e028bd69f7",
+      "/lovable-uploads/5d193498-bb32-46b4-9182-f8ff2e7c2632.png",
       "photo-1559925393-8be0ec4767c8",
       "photo-1559329007-40df8a9345d8"
     ],
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
-    title: "Hotels & Resorts",
-    images: [
-      "photo-1582719478250-c89cae4dc85b",
-      "photo-1566073771259-6a8506099945",
-      "photo-1564501049412-61c2a3083791"
-    ],
-    description: "Luxury environments complemented by premium plant arrangements"
-  },
-  {
     title: "Healthcare Facilities",
     images: [
-      "photo-1586671267731-da2cf3ceeb80",
-      "photo-1519494026892-80bbd2d6fd0d",
-      "photo-1538108149393-fbbd81895907"
+      "/lovable-uploads/379bb504-cde2-4ab4-b8f1-b75c36c1f6af.png",
+      "photo-1566073771259-6a8506099945",
+      "photo-1564501049412-61c2a3083791"
     ],
     description: "Healing environments with antimicrobial plant selections"
   },
   {
-    title: "Event Setups",
+    title: "Hotels & Vacation Rentals",
     images: [
-      "photo-1523438885200-e635ba2c371e",
-      "photo-1519167758481-83f1abed1c0c",
-      "photo-1464366400600-7168b8af9bc3"
+      "/lovable-uploads/a2b1cc9e-3b21-4f02-9233-e296082187bb.png",
+      "photo-1595246140962-93c06feddc6d",
+      "photo-1595246140962-93c06feddc6e"
     ],
-    description: "Stunning plant arrangements for special occasions"
+    description: "Luxury environments complemented by premium plant arrangements"
   },
   {
-    title: "Vacation Rentals",
+    title: "Cafés & Restaurants",
     images: [
-      "photo-1595246140962-93c06feddc6d",
-      "photo-1595246140962-93c06feddc6e",
-      "photo-1595246140962-93c06feddc6f"
+      "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png",
+      "photo-1584132967334-10e028bd69f7",
+      "photo-1559925393-8be0ec4767c8"
     ],
-    description: "Airbnb and rental properties transformed with greenery"
+    description: "Add natural ambiance to dining spaces"
+  },
+  {
+    title: "Corporate Offices",
+    images: [
+      "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png",
+      "photo-1497366216548-37526070297c",
+      "photo-1498050108023-c5249f4df085"
+    ],
+    description: "Improve air quality and employee wellbeing"
   }
 ];
 
