@@ -1,40 +1,51 @@
 import { Check } from "lucide-react";
+import { Button } from "./ui/button";
 
 const plans = [
   {
     name: "Small Space",
-    price: "299",
-    description: "Perfect for small offices and retail spaces up to 46 m²",
+    price: "50",
+    description: "Perfect for small offices and retail spaces up to 50 m²",
     features: [
-      "3-5 carefully selected plants",
+      "2-3 carefully selected plants",
       "Monthly maintenance visits",
       "Plant health monitoring",
       "Free replacements if needed",
       "Basic plant care consultation"
     ],
-    spaceSize: "Up to 46 m²"
+    spaceSize: "Up to 50 m²",
+    extraOptions: {
+      name: "Seasonal Flowering Package",
+      price: "25",
+      description: "Add seasonal flowers and bouquets"
+    }
   },
   {
     name: "Medium Space",
-    price: "599",
-    description: "Ideal for medium-sized spaces up to 140 m²",
+    price: "100",
+    description: "Ideal for medium-sized spaces between 50-100 m²",
     features: [
-      "8-12 curated plants",
+      "5-8 curated plants",
       "Bi-weekly maintenance visits",
       "Plant health monitoring",
       "Free replacements if needed",
       "Advanced plant care consultation",
       "Seasonal rotations"
     ],
-    spaceSize: "46-140 m²",
-    popular: true
+    spaceSize: "50-100 m²",
+    popular: true,
+    extraOptions: {
+      name: "Premium Flowering Package",
+      price: "40",
+      description: "Add premium seasonal flowers and custom bouquets"
+    }
   },
   {
     name: "Large Space",
-    price: "999",
-    description: "Designed for large commercial spaces over 140 m²",
+    price: "200",
+    description: "Designed for large commercial spaces over 100 m²",
     features: [
-      "15+ premium plants",
+      "10+ premium plants",
       "Weekly maintenance visits",
       "Plant health monitoring",
       "Priority replacements",
@@ -42,7 +53,12 @@ const plans = [
       "Seasonal rotations",
       "Custom plant installations"
     ],
-    spaceSize: "140+ m²"
+    spaceSize: "100+ m²",
+    extraOptions: {
+      name: "Luxury Flowering Package",
+      price: "60",
+      description: "Add luxury seasonal flowers and weekly custom bouquets"
+    }
   }
 ];
 
@@ -57,6 +73,9 @@ export const SubscriptionPlans = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Choose the perfect plant subscription plan for your space. All plans include professional maintenance and care.
           </p>
+          <div className="text-sage-500 font-medium mt-4">
+            🌿 Save 10% with annual subscription
+          </div>
           <div className="w-24 h-1 bg-sage-300 mx-auto mt-8"></div>
         </div>
 
@@ -102,11 +121,50 @@ export const SubscriptionPlans = () => {
                 ))}
               </ul>
 
-              <button className="w-full py-3 px-6 rounded-lg bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
-                Get Started
-              </button>
+              {plan.extraOptions && (
+                <div className="mb-8 p-4 bg-sage-50 rounded-lg">
+                  <h4 className="font-semibold text-sage-700 mb-2">
+                    {plan.extraOptions.name}
+                  </h4>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {plan.extraOptions.description}
+                  </p>
+                  <p className="text-sage-600 font-medium">
+                    +€{plan.extraOptions.price}/month
+                  </p>
+                </div>
+              )}
+
+              <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
+                Start Your Green Office
+              </Button>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-sage-500 mb-4">
+              Enterprise Solutions
+            </h3>
+            <p className="text-gray-600">
+              Need a custom solution for your large business? We offer tailored enterprise plans to meet your specific needs.
+            </p>
+          </div>
+          
+          <div className="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
+            <Button 
+              variant="outline"
+              className="border-sage-500 text-sage-500 hover:bg-sage-50"
+            >
+              Need Help Choosing?
+            </Button>
+            <Button 
+              className="bg-sage-500 text-white hover:bg-sage-600"
+            >
+              Contact Enterprise Sales
+            </Button>
+          </div>
         </div>
       </div>
     </section>
