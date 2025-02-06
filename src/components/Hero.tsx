@@ -2,6 +2,13 @@ import { ArrowRight } from "lucide-react";
 import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const Hero = () => {
   const { toast } = useToast();
@@ -56,12 +63,18 @@ export const Hero = () => {
     setEmail("");
   };
 
+  const images = [
+    "/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png",
+    "/lovable-uploads/7a6ee049-d995-4058-9b8f-7e42f64b0407.png",
+    "/lovable-uploads/c4fc8c24-735c-47d9-9f6b-73b9aeceec8e.png"
+  ];
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-sage-50 to-white overflow-hidden pt-20 lg:pt-28">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Column - Content */}
-          <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8">
+          <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 text-left">
             <span className="inline-block px-4 py-2 bg-sage-100/50 rounded-full text-sage-500 text-sm font-medium">
               Premium Plant Leasing Solutions
             </span>
@@ -103,16 +116,26 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Image */}
+          {/* Right Column - Image Carousel */}
           <div className="w-full lg:w-1/2">
-            <div className="relative w-full max-w-md mx-auto lg:ml-auto lg:mr-0 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <img
-                src="/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png"
-                alt="Modern office with plants"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-sage-500/20 to-transparent" />
-            </div>
+            <Carousel className="w-full max-w-xl mx-auto">
+              <CarouselContent>
+                {images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                      <img
+                        src={image}
+                        alt={`Modern office with plants ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-sage-500/20 to-transparent" />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
           </div>
         </div>
 
