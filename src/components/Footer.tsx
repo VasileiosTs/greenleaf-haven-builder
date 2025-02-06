@@ -52,7 +52,6 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2">
               <li>info@bloomintales.com</li>
-              <li>+123 456 789</li>
             </ul>
           </div>
           
