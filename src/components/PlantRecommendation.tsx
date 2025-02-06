@@ -11,21 +11,16 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import type { Tables } from "@/integrations/supabase/types";
 
-interface PlantOption {
-  id: string;
-  name: string;
-  description: string;
-  image_url: string;
-  benefits: string[];
-}
+type Plant = Tables<"plants">;
 
 export const PlantRecommendation = () => {
   const [officeSize, setOfficeSize] = useState<string>("");
   const [lighting, setLighting] = useState<string>("");
   const [maintenance, setMaintenance] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const [recommendations, setRecommendations] = useState<PlantOption[]>([]);
+  const [recommendations, setRecommendations] = useState<Plant[]>([]);
   const { toast } = useToast();
 
   const handleGetRecommendations = async () => {
