@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface PlantRecommendationFormProps {
   onSubmit: (officeSize: string, lighting: string, maintenance: string) => void;
@@ -24,52 +25,66 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-xl shadow-lg p-6 max-w-4xl mx-auto"
+    >
       <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <Select onValueChange={setOfficeSize}>
-          <SelectTrigger>
-            <SelectValue placeholder="Office Size" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Small">Small</SelectItem>
-            <SelectItem value="Medium">Medium</SelectItem>
-            <SelectItem value="Large">Large</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Office Size</label>
+          <Select onValueChange={setOfficeSize}>
+            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+              <SelectValue placeholder="Select size" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Small">Small (10-30m²)</SelectItem>
+              <SelectItem value="Medium">Medium (31-100m²)</SelectItem>
+              <SelectItem value="Large">Large (100m²+)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
-        <Select onValueChange={setLighting}>
-          <SelectTrigger>
-            <SelectValue placeholder="Lighting Conditions" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Low">Low Light</SelectItem>
-            <SelectItem value="Medium">Medium Light</SelectItem>
-            <SelectItem value="Bright">Bright Light</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Lighting</label>
+          <Select onValueChange={setLighting}>
+            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+              <SelectValue placeholder="Light conditions" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Low">Low Light</SelectItem>
+              <SelectItem value="Medium">Medium Light</SelectItem>
+              <SelectItem value="Bright">Bright Light</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
-        <Select onValueChange={setMaintenance}>
-          <SelectTrigger>
-            <SelectValue placeholder="Maintenance Preference" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Low">Low Maintenance</SelectItem>
-            <SelectItem value="Medium">Medium Maintenance</SelectItem>
-            <SelectItem value="High">High Maintenance</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Maintenance</label>
+          <Select onValueChange={setMaintenance}>
+            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+              <SelectValue placeholder="Maintenance level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Low">Low Maintenance</SelectItem>
+              <SelectItem value="Medium">Medium Maintenance</SelectItem>
+              <SelectItem value="High">High Maintenance</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
-      <div className="text-center mb-12">
+      <div className="text-center">
         <Button
           onClick={handleSubmit}
           disabled={loading || !officeSize || !lighting || !maintenance}
-          className="bg-sage-500 hover:bg-sage-600"
+          className="bg-sage-500 hover:bg-sage-600 transition-all duration-200 transform hover:scale-105"
         >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Get Recommendations
         </Button>
       </div>
-    </>
+    </motion.div>
   );
 };
