@@ -1,10 +1,44 @@
 import { ArrowRight } from "lucide-react";
+import { Plant, Building2, HeartPulse, ShoppingBag, Home, TreePine } from "lucide-react";
 
 export const Hero = () => {
+  const benefits = [
+    {
+      icon: Building2,
+      title: "Offices",
+      description: "Boost productivity and create a calming workspace"
+    },
+    {
+      icon: ShoppingBag,
+      title: "Retail",
+      description: "Enhance customer experience and store aesthetics"
+    },
+    {
+      icon: HeartPulse,
+      title: "Healthcare",
+      description: "Promote healing and reduce stress levels"
+    },
+    {
+      icon: Home,
+      title: "Hotels",
+      description: "Create welcoming and luxurious environments"
+    },
+    {
+      icon: Plant,
+      title: "Restaurants",
+      description: "Add natural ambiance to dining spaces"
+    },
+    {
+      icon: TreePine,
+      title: "Corporate",
+      description: "Improve air quality and employee wellbeing"
+    }
+  ];
+
   return (
-    <section className="min-h-screen pt-20 md:pt-24 px-4 bg-gradient-to-br from-sage-50 to-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="space-y-6 md:space-y-8 animate-fade-up">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-sage-50 to-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-center px-4">
+        <div className="space-y-6 md:space-y-8 animate-fade-up mb-16">
           <span className="inline-block px-4 py-2 bg-sage-100/50 rounded-full text-sage-500 text-sm">
             Premium Plant Leasing Solutions
           </span>
@@ -22,6 +56,24 @@ export const Hero = () => {
             Explore Our Packages
             <ArrowRight className="ml-2 w-4 h-4" />
           </button>
+        </div>
+
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto animate-fade-up delay-200">
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index}
+              className="bg-white/80 backdrop-blur p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="p-2 bg-sage-100 rounded-lg">
+                  <benefit.icon className="w-6 h-6 text-sage-500" />
+                </div>
+                <h3 className="font-semibold text-sage-500">{benefit.title}</h3>
+                <p className="text-sm text-sage-400 leading-tight">{benefit.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
