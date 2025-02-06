@@ -11,7 +11,7 @@ export const galleries = [
   {
     title: "Retail Shops",
     images: [
-      "/lovable-uploads/9a04142b-5720-4cde-b172-e57c46f16d16.png",
+      "/lovable-uploads/44e58334-5adf-4383-989c-fe6608ac9b44.png",
       "/lovable-uploads/5e898ea1-ce68-4e14-a4ff-856f24627993.png",
       "/lovable-uploads/a5b2ff7b-8206-48cf-be2e-b5f10a387192.png"
     ],
