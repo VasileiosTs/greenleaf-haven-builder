@@ -30,14 +30,14 @@ export const Hero = () => {
       image: "/lovable-uploads/a2b1cc9e-3b21-4f02-9233-e296082187bb.png"
     },
     {
-      icon: Sprout,
-      title: "Café",
+      icon: TreePine,
+      title: "Restaurants",
       description: "Add natural ambiance to dining spaces",
       image: "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png"
     },
     {
-      icon: TreePine,
-      title: "Corporate",
+      icon: Sprout,
+      title: "Café",
       description: "Improve air quality and employee wellbeing",
       image: "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png"
     }
