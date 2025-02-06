@@ -11,11 +11,22 @@ import {
 import { useLanguage } from "../contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export const Header = () => {
   const { setLanguage, t } = useLanguage();
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
@@ -39,40 +50,67 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full bg-sage-500 text-white py-4 px-6 fixed top-0 left-0 right-0 z-50">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`w-full py-4 px-6 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/80 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center space-x-2">
             <img src="/placeholder.svg" alt="BloominTales Logo" className="h-8 w-8" />
-            <span className="text-xl font-bold">BloominTales</span>
+            <span className={`text-xl font-bold ${
+              isScrolled ? "text-sage-500" : "text-sage-500"
+            }`}>
+              BloominTales
+            </span>
           </Link>
           
           <nav className="hidden md:flex space-x-8">
-            <Link to="/#plants" className="hover:text-sage-100 transition-colors">Plants</Link>
-            <Link to="/#accessories" className="hover:text-sage-100 transition-colors">Accessories</Link>
-            <Link to="/#community" className="hover:text-sage-100 transition-colors">Community</Link>
-            <Link to="/#shop" className="hover:text-sage-100 transition-colors">Shop</Link>
+            {["Plants", "Accessories", "Community", "Shop"].map((item) => (
+              <Link
+                key={item}
+                to={`/#${item.toLowerCase()}`}
+                className={`hover:text-sage-500 transition-colors ${
+                  isScrolled ? "text-sage-400" : "text-sage-400"
+                }`}
+              >
+                {item}
+              </Link>
+            ))}
           </nav>
         </div>
 
         <div className="flex items-center space-x-6">
-          <button className="hover:text-sage-100 transition-colors">
+          <button className={`hover:text-sage-500 transition-colors ${
+            isScrolled ? "text-sage-400" : "text-sage-400"
+          }`}>
             <Search className="w-5 h-5" />
           </button>
-          <button className="hover:text-sage-100 transition-colors">
+          
+          <button className={`hover:text-sage-500 transition-colors ${
+            isScrolled ? "text-sage-400" : "text-sage-400"
+          }`}>
             <ShoppingCart className="w-5 h-5" />
           </button>
           
           {user ? (
             <div className="flex items-center space-x-4">
               <Link to="/dashboard">
-                <Button variant="outline" className="text-white border-white hover:bg-sage-400">
+                <Button 
+                  variant="outline" 
+                  className="text-sage-500 border-sage-500 hover:bg-sage-50"
+                >
                   Dashboard
                 </Button>
               </Link>
               <Button
                 variant="outline"
-                className="text-white border-white hover:bg-sage-400"
+                className="text-sage-500 border-sage-500 hover:bg-sage-50"
                 onClick={handleSignOut}
               >
                 Sign Out
@@ -80,7 +118,10 @@ export const Header = () => {
             </div>
           ) : (
             <Link to="/auth">
-              <Button variant="outline" className="text-white border-white hover:bg-sage-400">
+              <Button 
+                variant="outline" 
+                className="text-sage-500 border-sage-500 hover:bg-sage-50"
+              >
                 Sign In
               </Button>
             </Link>
@@ -88,21 +129,28 @@ export const Header = () => {
           
           <Menubar className="border-none bg-transparent md:hidden">
             <MenubarMenu>
-              <MenubarTrigger className="text-white hover:text-sage-100">
+              <MenubarTrigger className={`${
+                isScrolled ? "text-sage-400" : "text-sage-400"
+              } hover:text-sage-500`}>
                 <Menu className="w-5 h-5" />
               </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>Plants</MenubarItem>
-                <MenubarItem>Accessories</MenubarItem>
-                <MenubarItem>Community</MenubarItem>
-                <MenubarItem>Shop</MenubarItem>
-                <MenubarItem onClick={() => handleLanguageChange('en')}>English</MenubarItem>
-                <MenubarItem onClick={() => handleLanguageChange('el')}>Ελληνικά</MenubarItem>
+              <MenubarContent className="bg-white/95 backdrop-blur-md">
+                {["Plants", "Accessories", "Community", "Shop"].map((item) => (
+                  <MenubarItem key={item} className="cursor-pointer">
+                    {item}
+                  </MenubarItem>
+                ))}
+                <MenubarItem onClick={() => handleLanguageChange('en')}>
+                  English
+                </MenubarItem>
+                <MenubarItem onClick={() => handleLanguageChange('el')}>
+                  Ελληνικά
+                </MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
