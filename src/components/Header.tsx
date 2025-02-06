@@ -62,7 +62,12 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/placeholder.svg" alt="BloominTales Logo" className="h-8 w-8" />
+            <img 
+              src="/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png" 
+              alt="BloominTales Logo" 
+              className="h-10 w-10 object-contain transition-transform duration-300 hover:scale-110"
+              style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(15%) saturate(1309%) hue-rotate(89deg) brightness(97%) contrast(88%)' }}
+            />
             <span className={`text-xl font-bold ${
               isScrolled ? "text-sage-500" : "text-sage-500"
             }`}>
