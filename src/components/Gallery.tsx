@@ -11,54 +11,54 @@ const galleries = [
   {
     title: "Office Spaces",
     images: [
-      "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png",
-      "photo-1497366754035-f200968a6e72",
-      "photo-1497366811353-6870744d04b2"
+      "/lovable-uploads/caa9f5af-4bd7-4d1e-976d-66a804666c80.png",
+      "/lovable-uploads/87d8129e-5e04-43db-b965-f63f04f5b480.png",
+      "/lovable-uploads/60c9fafd-8665-4376-ba9d-c834adb992ad.png"
     ],
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
   {
     title: "Retail Spaces",
     images: [
-      "/lovable-uploads/5d193498-bb32-46b4-9182-f8ff2e7c2632.png",
-      "photo-1559925393-8be0ec4767c8",
-      "photo-1559329007-40df8a9345d8"
+      "/lovable-uploads/3cd1ca92-4631-45c2-a1aa-6c856181b660.png",
+      "/lovable-uploads/2ef1ecaf-9c8d-43ec-b97f-1a2be0f5b72e.png",
+      "/lovable-uploads/f009ae56-662f-4de9-ac56-0acc768e2f2a.png"
     ],
     description: "Create inviting atmospheres with strategic plant placement"
   },
   {
     title: "Healthcare Facilities",
     images: [
-      "/lovable-uploads/379bb504-cde2-4ab4-b8f1-b75c36c1f6af.png",
-      "photo-1566073771259-6a8506099945",
-      "photo-1564501049412-61c2a3083791"
+      "/lovable-uploads/96c10401-23a2-403b-9831-dcf1f3befcb0.png",
+      "/lovable-uploads/e87e5ec4-889f-48b0-b9a7-7ddfdccbc3d9.png",
+      "/lovable-uploads/69b01a0b-0055-41d2-90d5-c9406e5f61ff.png"
     ],
     description: "Healing environments with antimicrobial plant selections"
   },
   {
     title: "Hotels & Vacation Rentals",
     images: [
-      "/lovable-uploads/a2b1cc9e-3b21-4f02-9233-e296082187bb.png",
-      "photo-1595246140962-93c06feddc6d",
-      "photo-1595246140962-93c06feddc6e"
+      "/lovable-uploads/19fb5704-cc7d-4c08-957e-5cf1dcbdf30c.png",
+      "/lovable-uploads/26283a9e-200a-42ae-8206-145c60ca6290.png",
+      "/lovable-uploads/ee67974f-b72d-45eb-951e-c203fa2cb8ad.png"
     ],
     description: "Luxury environments complemented by premium plant arrangements"
   },
   {
     title: "Cafés & Restaurants",
     images: [
-      "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png",
-      "photo-1584132967334-10e028bd69f7",
-      "photo-1559925393-8be0ec4767c8"
+      "/lovable-uploads/3cd1ca92-4631-45c2-a1aa-6c856181b660.png",
+      "/lovable-uploads/2ef1ecaf-9c8d-43ec-b97f-1a2be0f5b72e.png",
+      "/lovable-uploads/f009ae56-662f-4de9-ac56-0acc768e2f2a.png"
     ],
     description: "Add natural ambiance to dining spaces"
   },
   {
     title: "Corporate Offices",
     images: [
-      "/lovable-uploads/bc35aa09-eb76-497b-bc8c-5cfca26249d0.png",
-      "photo-1497366216548-37526070297c",
-      "photo-1498050108023-c5249f4df085"
+      "/lovable-uploads/6b609601-92b4-4b40-9688-1e27254eb015.png",
+      "/lovable-uploads/bc316bc6-9097-4030-b374-22976976e9a9.png",
+      "/lovable-uploads/f8df80d0-0198-47ed-882b-6008ab40de87.png"
     ],
     description: "Improve air quality and employee wellbeing"
   }
@@ -104,7 +104,7 @@ export const Gallery = () => {
                     <CarouselItem key={imageIndex}>
                       <div className="aspect-[4/3]">
                         <img
-                          src={`https://images.unsplash.com/${image}`}
+                          src={image}
                           alt={`${gallery.title} ${imageIndex + 1}`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
