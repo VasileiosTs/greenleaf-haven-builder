@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Search, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -18,6 +18,16 @@ export const HeaderActions = ({ isScrolled, user }: HeaderActionsProps) => {
 
   return (
     <div className="flex items-center space-x-6">
+      <a 
+        href="mailto:info@bloomintales.com" 
+        className={`flex items-center space-x-2 hover:text-sage-500 transition-colors ${
+          isScrolled ? "text-sage-400" : "text-sage-400"
+        }`}
+      >
+        <Mail className="w-5 h-5" />
+        <span className="hidden md:inline">info@bloomintales.com</span>
+      </a>
+
       <button className={`hover:text-sage-500 transition-colors ${
         isScrolled ? "text-sage-400" : "text-sage-400"
       }`}>
