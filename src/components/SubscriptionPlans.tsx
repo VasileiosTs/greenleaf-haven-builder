@@ -4,7 +4,7 @@ const plans = [
   {
     name: "Small Space",
     price: "299",
-    description: "Perfect for small offices and retail spaces up to 500 sq ft",
+    description: "Perfect for small offices and retail spaces up to 46 m²",
     features: [
       "3-5 carefully selected plants",
       "Monthly maintenance visits",
@@ -12,12 +12,12 @@ const plans = [
       "Free replacements if needed",
       "Basic plant care consultation"
     ],
-    spaceSize: "Up to 500 sq ft"
+    spaceSize: "Up to 46 m²"
   },
   {
     name: "Medium Space",
     price: "599",
-    description: "Ideal for medium-sized spaces up to 1,500 sq ft",
+    description: "Ideal for medium-sized spaces up to 140 m²",
     features: [
       "8-12 curated plants",
       "Bi-weekly maintenance visits",
@@ -26,13 +26,13 @@ const plans = [
       "Advanced plant care consultation",
       "Seasonal rotations"
     ],
-    spaceSize: "500-1,500 sq ft",
+    spaceSize: "46-140 m²",
     popular: true
   },
   {
     name: "Large Space",
     price: "999",
-    description: "Designed for large commercial spaces over 1,500 sq ft",
+    description: "Designed for large commercial spaces over 140 m²",
     features: [
       "15+ premium plants",
       "Weekly maintenance visits",
@@ -42,7 +42,7 @@ const plans = [
       "Seasonal rotations",
       "Custom plant installations"
     ],
-    spaceSize: "1,500+ sq ft"
+    spaceSize: "140+ m²"
   }
 ];
 
@@ -86,7 +86,7 @@ export const SubscriptionPlans = () => {
                 <div className="text-gray-600 mb-4">{plan.spaceSize}</div>
                 <div className="flex items-center justify-center">
                   <span className="text-4xl font-bold text-sage-500">
-                    ${plan.price}
+                    €{plan.price}
                   </span>
                   <span className="text-gray-500 ml-2">/month</span>
                 </div>
