@@ -29,9 +29,9 @@ export const galleries = [
   {
     title: "Hotels & Vacation Rentals",
     images: [
-      "/lovable-uploads/19fb5704-cc7d-4c08-957e-5cf1dcbdf30c.png",
-      "/lovable-uploads/26283a9e-200a-42ae-8206-145c60ca6290.png",
-      "/lovable-uploads/ee67974f-b72d-45eb-951e-c203fa2cb8ad.png"
+      "/lovable-uploads/53912bf6-d248-4d2c-95c8-f97015cc0645.png",
+      "/lovable-uploads/2f14dd9e-0460-414e-a717-7f3d81e5ec55.png",
+      "/lovable-uploads/6aa87f6b-e099-4d33-b2b7-911a1a0978e3.png"
     ],
     description: "Luxury environments complemented by premium plant arrangements"
   },
