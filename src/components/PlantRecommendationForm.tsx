@@ -40,7 +40,7 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
             <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg">
+            <SelectContent className="bg-white">
               <SelectItem value="Small">Small (10-30m²)</SelectItem>
               <SelectItem value="Medium">Medium (31-100m²)</SelectItem>
               <SelectItem value="Large">Large (100m²+)</SelectItem>
@@ -54,7 +54,7 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
             <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Light conditions" />
             </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg">
+            <SelectContent className="bg-white">
               <SelectItem value="Low">Low Light</SelectItem>
               <SelectItem value="Medium">Medium Light</SelectItem>
               <SelectItem value="Bright">Bright Light</SelectItem>
@@ -68,7 +68,7 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
             <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Maintenance level" />
             </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg">
+            <SelectContent className="bg-white">
               <SelectItem value="Low">Low Maintenance</SelectItem>
               <SelectItem value="Medium">Medium Maintenance</SelectItem>
               <SelectItem value="High">High Maintenance</SelectItem>
