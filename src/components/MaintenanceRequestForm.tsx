@@ -1,34 +1,22 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { RequestTypeSelect } from "./maintenance/RequestTypeSelect";
+import { RequestDescription } from "./maintenance/RequestDescription";
+import { ImageUrlInput } from "./maintenance/ImageUrlInput";
+
+type RequestType = "Wilting" | "Pests" | "Needs Replacement" | "Other";
 
 interface MaintenanceRequestFormProps {
   userId: string;
 }
 
-type RequestType = "Wilting" | "Pests" | "Needs Replacement" | "Other";
-
-interface FormData {
-  type: RequestType | "";
-  description: string;
-  imageUrl: string;
-}
-
 export const MaintenanceRequestForm = ({ userId }: MaintenanceRequestFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    type: "",
+  const [formData, setFormData] = useState({
+    type: "" as RequestType | "",
     description: "",
     imageUrl: "",
   });
@@ -81,57 +69,18 @@ export const MaintenanceRequestForm = ({ userId }: MaintenanceRequestFormProps) 
     <div className="bg-white p-6 rounded-lg shadow">
       <h2 className="text-xl font-semibold mb-4">Submit Maintenance Request</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Issue Type
-          </label>
-          <Select
-            value={formData.type}
-            onValueChange={(value: RequestType) =>
-              setFormData((prev) => ({ ...prev, type: value }))
-            }
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Select issue type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Wilting">Wilting</SelectItem>
-              <SelectItem value="Pests">Pests</SelectItem>
-              <SelectItem value="Needs Replacement">Needs Replacement</SelectItem>
-              <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Description
-          </label>
-          <Textarea
-            value={formData.description}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, description: e.target.value }))
-            }
-            placeholder="Please describe the issue..."
-            className="mt-1"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Image URL (Optional)
-          </label>
-          <Input
-            type="url"
-            value={formData.imageUrl}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, imageUrl: e.target.value }))
-            }
-            placeholder="https://example.com/image.jpg"
-            className="mt-1"
-          />
-        </div>
-
+        <RequestTypeSelect
+          value={formData.type}
+          onChange={(value) => setFormData((prev) => ({ ...prev, type: value }))}
+        />
+        <RequestDescription
+          value={formData.description}
+          onChange={(value) => setFormData((prev) => ({ ...prev, description: value }))}
+        />
+        <ImageUrlInput
+          value={formData.imageUrl}
+          onChange={(value) => setFormData((prev) => ({ ...prev, imageUrl: value }))}
+        />
         <Button
           type="submit"
           className="w-full bg-sage-600 hover:bg-sage-700"

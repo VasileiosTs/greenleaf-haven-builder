@@ -9,6 +9,36 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      maintenance_requests: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          request_type: string
+          status: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          request_type: string
+          status?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          request_type?: string
+          status?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       plant_recommendations: {
         Row: {
           created_at: string | null
@@ -69,6 +99,33 @@ export type Database = {
           maintenance_level?: string
           name?: string
           suitable_space_size?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          created_at: string | null
+          id: string
+          plan_size: string
+          start_date: string | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          plan_size: string
+          start_date?: string | null
+          status?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          plan_size?: string
+          start_date?: string | null
+          status?: string
+          user_id?: string
         }
         Relationships: []
       }
