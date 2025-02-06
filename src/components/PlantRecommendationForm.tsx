@@ -21,7 +21,9 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
   const [maintenance, setMaintenance] = useState<string>("");
 
   const handleSubmit = () => {
-    onSubmit(officeSize, lighting, maintenance);
+    if (officeSize && lighting && maintenance) {
+      onSubmit(officeSize, lighting, maintenance);
+    }
   };
 
   return (
@@ -34,11 +36,11 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
       <div className="grid md:grid-cols-3 gap-6 mb-8">
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">Office Size</label>
-          <Select onValueChange={setOfficeSize}>
-            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+          <Select onValueChange={setOfficeSize} value={officeSize}>
+            <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border shadow-lg">
               <SelectItem value="Small">Small (10-30m²)</SelectItem>
               <SelectItem value="Medium">Medium (31-100m²)</SelectItem>
               <SelectItem value="Large">Large (100m²+)</SelectItem>
@@ -48,11 +50,11 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">Lighting</label>
-          <Select onValueChange={setLighting}>
-            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+          <Select onValueChange={setLighting} value={lighting}>
+            <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Light conditions" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border shadow-lg">
               <SelectItem value="Low">Low Light</SelectItem>
               <SelectItem value="Medium">Medium Light</SelectItem>
               <SelectItem value="Bright">Bright Light</SelectItem>
@@ -62,11 +64,11 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
 
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">Maintenance</label>
-          <Select onValueChange={setMaintenance}>
-            <SelectTrigger className="w-full bg-gray-50 border-gray-200">
+          <Select onValueChange={setMaintenance} value={maintenance}>
+            <SelectTrigger className="w-full bg-white border-gray-200">
               <SelectValue placeholder="Maintenance level" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white border shadow-lg">
               <SelectItem value="Low">Low Maintenance</SelectItem>
               <SelectItem value="Medium">Medium Maintenance</SelectItem>
               <SelectItem value="High">High Maintenance</SelectItem>

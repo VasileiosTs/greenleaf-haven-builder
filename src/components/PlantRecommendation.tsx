@@ -25,31 +25,44 @@ export const PlantRecommendation = () => {
 
     setLoading(true);
     try {
+      console.log("Fetching recommendations with:", { officeSize, lighting, maintenance });
+      
       const { data, error } = await supabase
         .from('plants')
-        .select()
+        .select('*')
         .eq('suitable_space_size', officeSize)
         .eq('light_requirement', lighting)
-        .eq('maintenance_level', maintenance)
-        .limit(5);
+        .eq('maintenance_level', maintenance);
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        throw error;
+      }
 
+      console.log("Received recommendations:", data);
       setRecommendations(data || []);
       
-      await supabase
-        .from('plant_recommendations')
-        .insert({
-          office_size: officeSize,
-          lighting,
-          maintenance_preference: maintenance,
-          recommended_plants: data?.map(plant => plant.id) || [],
-        });
+      if (data && data.length > 0) {
+        await supabase
+          .from('plant_recommendations')
+          .insert({
+            office_size: officeSize,
+            lighting,
+            maintenance_preference: maintenance,
+            recommended_plants: data.map(plant => plant.id),
+          });
 
-      toast({
-        title: "Success!",
-        description: "Here are your personalized plant recommendations.",
-      });
+        toast({
+          title: "Success!",
+          description: `Found ${data.length} plant recommendations for you.`,
+        });
+      } else {
+        toast({
+          title: "No matches found",
+          description: "We couldn't find any plants matching your criteria. Try different options.",
+          variant: "destructive",
+        });
+      }
 
     } catch (error) {
       console.error("Error:", error);
