@@ -20,7 +20,7 @@ export const Hero = () => {
     },
     {
       icon: Home,
-      title: "Hotels",
+      title: "Hotels & Airbnb",
       description: "Create welcoming and luxurious environments"
     },
     {
