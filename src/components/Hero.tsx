@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Plant, Building2, HeartPulse, ShoppingBag, Home, TreePine } from "lucide-react";
+import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
 
 export const Hero = () => {
   const benefits = [
@@ -24,7 +24,7 @@ export const Hero = () => {
       description: "Create welcoming and luxurious environments"
     },
     {
-      icon: Plant,
+      icon: Sprout,
       title: "Restaurants",
       description: "Add natural ambiance to dining spaces"
     },
