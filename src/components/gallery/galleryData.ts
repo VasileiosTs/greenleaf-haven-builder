@@ -38,9 +38,9 @@ export const galleries = [
   {
     title: "Cafés & Restaurants",
     images: [
-      "/lovable-uploads/3cd1ca92-4631-45c2-a1aa-6c856181b660.png",
-      "/lovable-uploads/2ef1ecaf-9c8d-43ec-b97f-1a2be0f5b72e.png",
-      "/lovable-uploads/f009ae56-662f-4de9-ac56-0acc768e2f2a.png"
+      "/lovable-uploads/1238f2ce-48ab-4be7-a2c1-6191ac2a155a.png",
+      "/lovable-uploads/0def404c-4466-4192-9264-2046f590de10.png",
+      "/lovable-uploads/a5d6233c-b155-475f-96ee-25203a38a740.png"
     ],
     description: "Add natural ambiance to dining spaces"
   },
