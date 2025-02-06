@@ -23,7 +23,7 @@ export const Hero = () => {
 
           <button className="inline-flex items-center px-6 py-3 bg-sage-500 text-white rounded-full hover:bg-sage-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mx-auto md:mx-0">
             Shop the store
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-4 h-4" />
           </button>
         </div>
 
