@@ -72,9 +72,9 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-sage-50 to-white overflow-hidden pt-20 lg:pt-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           {/* Left Column - Content */}
-          <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 text-left">
+          <div className="w-full lg:w-[45%] space-y-8 animate-fade-up">
             <span className="inline-block px-4 py-2 bg-sage-100/50 rounded-full text-sage-500 text-sm font-medium">
               Premium Plant Leasing Solutions
             </span>
@@ -117,12 +117,12 @@ export const Hero = () => {
           </div>
 
           {/* Right Column - Image Carousel */}
-          <div className="w-full lg:w-1/2">
-            <Carousel className="w-full max-w-xl mx-auto">
+          <div className="w-full lg:w-[45%] animate-fade-in">
+            <Carousel className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <CarouselContent>
                 {images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                       <img
                         src={image}
                         alt={`Modern office with plants ${index + 1}`}
@@ -133,14 +133,14 @@ export const Hero = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
+              <CarouselPrevious className="hidden sm:flex -left-4 bg-white/80 hover:bg-white" />
+              <CarouselNext className="hidden sm:flex -right-4 bg-white/80 hover:bg-white" />
             </Carousel>
           </div>
         </div>
 
         {/* Benefits Grid */}
-        <div className="mt-16 lg:mt-24">
+        <div className="mt-16 lg:mt-24 animate-fade-up">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {benefits.map((benefit, index) => (
               <div 
