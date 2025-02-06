@@ -21,7 +21,7 @@ export const GalleryCard = ({ title, images, description, index }: GalleryCardPr
       className="group relative overflow-hidden rounded-2xl animate-fade-up shadow-lg hover:shadow-xl transition-all duration-300"
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      <Carousel className="w-full">
+      <Carousel className="w-full max-w-full">
         <CarouselContent>
           {images.map((image, imageIndex) => (
             <CarouselItem key={imageIndex}>
@@ -35,8 +35,10 @@ export const GalleryCard = ({ title, images, description, index }: GalleryCardPr
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <div className="absolute inset-0 flex items-center justify-between p-4 pointer-events-none">
+          <CarouselPrevious className="relative left-0 pointer-events-auto" />
+          <CarouselNext className="relative right-0 pointer-events-auto" />
+        </div>
       </Carousel>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 md:p-6 text-white">
         <h3 className="text-lg md:text-xl font-semibold mb-2">{title}</h3>
