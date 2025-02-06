@@ -50,16 +50,14 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-40 lg:pt-48 bg-gradient-to-br from-sage-50 to-white overflow-hidden">
-      {/* Hero Background Image */}
-      <div 
-        className="absolute inset-0 z-0 opacity-10"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+    <section className="relative min-h-screen pt-40 lg:pt-48 bg-white overflow-hidden">
+      {/* Hero Background Pattern */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-sage-100/30 rounded-full filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sage-200/20 rounded-full filter blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-sage-50/40 rounded-full filter blur-2xl animate-pulse delay-500" />
+        <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-sage-100/20 rounded-full filter blur-2xl animate-pulse delay-700" />
+      </div>
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
@@ -75,10 +73,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-sage-100/30 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sage-200/20 rounded-full filter blur-3xl animate-pulse delay-1000" />
     </section>
   );
 };
