@@ -14,7 +14,7 @@ export const Logo = () => {
         <span className="text-lg md:text-2xl font-bold text-sage-500 hover:text-sage-600 transition-colors">
           BloominTales
         </span>
-        <span className="text-[10px] md:text-xs text-sage-400">Premium Plant Leasing</span>
+        <span className="text-[10px] md:text-xs text-sage-400">Growing Stories, One Lease at a Time</span>
       </div>
     </Link>
   );
