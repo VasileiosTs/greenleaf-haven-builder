@@ -142,28 +142,25 @@ export const SubscriptionPlans = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-sage-500 mb-4">
-              Enterprise Solutions
-            </h3>
-            <p className="text-gray-600">
-              Need a custom solution for your large business? We offer tailored enterprise plans to meet your specific needs.
-            </p>
-          </div>
-          
-          <div className="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
-            <Button 
-              variant="outline"
-              className="border-sage-500 text-sage-500 hover:bg-sage-50"
-            >
-              Need Help Choosing?
-            </Button>
-            <Button 
-              className="bg-sage-500 text-white hover:bg-sage-600"
-            >
-              Contact Enterprise Sales
-            </Button>
+        <div className="mt-16">
+          <div className="rounded-2xl p-8 bg-white border border-gray-200 shadow-lg">
+            <div className="md:flex md:items-center md:justify-between">
+              <div className="mb-6 md:mb-0 md:mr-8">
+                <h3 className="text-2xl font-bold text-sage-500 mb-4">
+                  Enterprise Solutions
+                </h3>
+                <p className="text-gray-600 max-w-2xl">
+                  Need a custom solution for your large business with multiple offices and locations? We offer tailored enterprise plans to meet your specific needs.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Button 
+                  className="w-full md:w-auto bg-sage-500 text-white hover:bg-sage-600"
+                >
+                  Contact Enterprise Sales
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
