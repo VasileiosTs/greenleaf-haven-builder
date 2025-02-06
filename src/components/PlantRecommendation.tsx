@@ -11,9 +11,10 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import type { Tables } from "@/integrations/supabase/types";
+import type { Database } from "@/integrations/supabase/types";
 
-type Plant = Tables<"plants">;
+type Plant = Database['public']['Tables']['plants']['Row'];
+type PlantRecommendation = Database['public']['Tables']['plant_recommendations']['Row'];
 
 export const PlantRecommendation = () => {
   const [officeSize, setOfficeSize] = useState<string>("");
@@ -36,11 +37,11 @@ export const PlantRecommendation = () => {
     setLoading(true);
     try {
       const { data, error } = await supabase
-        .from("plants")
-        .select("*")
-        .eq("suitable_space_size", officeSize)
-        .eq("light_requirement", lighting)
-        .eq("maintenance_level", maintenance)
+        .from('plants')
+        .select()
+        .eq('suitable_space_size', officeSize)
+        .eq('light_requirement', lighting)
+        .eq('maintenance_level', maintenance)
         .limit(5);
 
       if (error) throw error;
@@ -48,12 +49,14 @@ export const PlantRecommendation = () => {
       setRecommendations(data || []);
       
       // Store recommendation in database
-      await supabase.from("plant_recommendations").insert({
-        office_size: officeSize,
-        lighting,
-        maintenance_preference: maintenance,
-        recommended_plants: data?.map(plant => plant.id) || [],
-      });
+      await supabase
+        .from('plant_recommendations')
+        .insert({
+          office_size: officeSize,
+          lighting,
+          maintenance_preference: maintenance,
+          recommended_plants: data?.map(plant => plant.id) || [],
+        });
 
     } catch (error) {
       console.error("Error:", error);

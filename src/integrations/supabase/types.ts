@@ -9,7 +9,69 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      plant_recommendations: {
+        Row: {
+          created_at: string | null
+          id: string
+          lighting: string
+          maintenance_preference: string
+          office_size: string
+          recommended_plants: string[]
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          lighting: string
+          maintenance_preference: string
+          office_size: string
+          recommended_plants: string[]
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          lighting?: string
+          maintenance_preference?: string
+          office_size?: string
+          recommended_plants?: string[]
+        }
+        Relationships: []
+      }
+      plants: {
+        Row: {
+          benefits: string[] | null
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          light_requirement: string
+          maintenance_level: string
+          name: string
+          suitable_space_size: string
+        }
+        Insert: {
+          benefits?: string[] | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          light_requirement: string
+          maintenance_level: string
+          name: string
+          suitable_space_size: string
+        }
+        Update: {
+          benefits?: string[] | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          light_requirement?: string
+          maintenance_level?: string
+          name?: string
+          suitable_space_size?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
