@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Logo } from "./Logo";
-import { Navigation } from "./Navigation";
 import { HeaderActions } from "./HeaderActions";
 
 export const Header = () => {
@@ -25,7 +24,6 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Logo />
-        <Navigation isScrolled={isScrolled} />
         <HeaderActions />
       </div>
     </header>

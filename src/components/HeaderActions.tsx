@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -16,7 +16,14 @@ export const HeaderActions = () => {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-6">
+      <a 
+        href="mailto:info@bloomintales.com" 
+        className="flex items-center space-x-2 hover:text-sage-500 transition-colors text-sage-400"
+      >
+        <Mail className="w-5 h-5" />
+        <span className="hidden md:inline">info@bloomintales.com</span>
+      </a>
       <Select value={language} onValueChange={handleLanguageChange}>
         <SelectTrigger className="w-[100px]">
           <SelectValue placeholder="Language" />
@@ -26,8 +33,6 @@ export const HeaderActions = () => {
           <SelectItem value="el">Ελληνικά</SelectItem>
         </SelectContent>
       </Select>
-      <Button variant="outline">Sign In</Button>
-      <Button>Get Started</Button>
     </div>
   );
 };
