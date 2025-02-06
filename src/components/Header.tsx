@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Logo } from "./Logo";
-import { HeaderActions } from "./HeaderActions";
-import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [user, setUser] = useState<any>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,20 +12,6 @@ export const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => subscription.unsubscribe();
   }, []);
 
   return (
@@ -43,9 +24,8 @@ export const Header = () => {
           : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto">
         <Logo />
-        <HeaderActions isScrolled={isScrolled} user={user} />
       </div>
     </motion.header>
   );
