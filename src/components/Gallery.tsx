@@ -54,7 +54,7 @@ export const Gallery = () => {
             Gallery
           </span>
           <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
-            See Our Transformations
+            See Transformations
           </h2>
           <p className="text-gray-600 text-sm md:text-base">
             Discover how plants has transformed spaces in vibrant green and healthy spots
