@@ -50,8 +50,8 @@ export const Header = () => {
       animate={{ y: 0 }}
       className={`w-full py-4 px-6 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          ? "bg-white shadow-md"
+          : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -70,7 +70,7 @@ export const Header = () => {
               } hover:text-sage-500`}>
                 <Menu className="w-5 h-5" />
               </MenubarTrigger>
-              <MenubarContent className="bg-white/95 backdrop-blur-md">
+              <MenubarContent className="bg-white">
                 {["Plants", "Accessories", "Community", "Shop"].map((item) => (
                   <MenubarItem key={item} className="cursor-pointer">
                     {item}
