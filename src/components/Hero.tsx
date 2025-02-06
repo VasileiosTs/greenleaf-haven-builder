@@ -5,7 +5,6 @@ import { useToast } from "@/components/ui/use-toast";
 
 export const Hero = () => {
   const { toast } = useToast();
-  const [email, setEmail] = useState("");
   
   const benefits = [
     {
@@ -47,21 +46,12 @@ export const Hero = () => {
     }
   };
 
-  const handleConsultationSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Thanks for your interest!",
-      description: "We'll be in touch with you shortly.",
-    });
-    setEmail("");
-  };
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-sage-50 to-white overflow-hidden pt-20 lg:pt-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           {/* Content */}
-          <div className="w-full space-y-8 animate-fade-up">
+          <div className="w-full max-w-3xl space-y-8 animate-fade-up text-center lg:text-left">
             <span className="inline-block px-4 py-2 bg-sage-100/50 rounded-full text-sage-500 text-sm font-medium">
               Premium Plant Leasing Solutions
             </span>
@@ -70,12 +60,12 @@ export const Hero = () => {
               Green Spaces Made Simple
             </h1>
             
-            <p className="text-sage-400 text-lg lg:text-xl leading-relaxed">
+            <p className="text-sage-400 text-lg lg:text-xl leading-relaxed max-w-2xl">
               Transform your workspace with our premium plant leasing solutions. Create a healthier, 
               more productive environment with expert plant care services.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <button 
                 onClick={handleExploreClick}
                 className="inline-flex items-center justify-center px-6 py-3 bg-sage-500 text-white rounded-full hover:bg-sage-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -83,23 +73,6 @@ export const Hero = () => {
                 Explore Our Services
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
-
-              <form onSubmit={handleConsultationSubmit} className="flex-1 flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-full border border-sage-200 focus:outline-none focus:ring-2 focus:ring-sage-300"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-white text-sage-500 border border-sage-300 rounded-full hover:bg-sage-50 transition-all duration-300 whitespace-nowrap"
-                >
-                  Get Free Consultation
-                </button>
-              </form>
             </div>
           </div>
         </div>
