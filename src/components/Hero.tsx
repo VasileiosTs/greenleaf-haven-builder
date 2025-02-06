@@ -67,12 +67,12 @@ export const Hero = () => {
             </span>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-sage-500 leading-tight">
-              Green Spaces Made Simple
+              Transform Your Space with Living Green
             </h1>
             
             <p className="text-sage-400 text-lg lg:text-xl leading-relaxed">
-              Transform your space with hassle-free, sustainable plant solutions
-              tailored for offices, hotels, restaurants, and more.
+              Discover our premium plant leasing solutions for businesses. Create a healthier, 
+              more productive environment with our expert plant care services.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
