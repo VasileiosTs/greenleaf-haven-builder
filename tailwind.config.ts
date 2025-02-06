@@ -25,7 +25,7 @@ export default {
           200: "#bfd3bf",
           300: "#8BA888",
           400: "#5a785a",
-          500: "#445c44",
+          500: "#2F5E2F", // Updated to match the template's green
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
