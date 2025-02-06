@@ -16,10 +16,18 @@ interface MaintenanceRequestFormProps {
   userId: string;
 }
 
+type RequestType = "Wilting" | "Pests" | "Needs Replacement" | "Other";
+
+interface FormData {
+  type: RequestType | "";
+  description: string;
+  imageUrl: string;
+}
+
 export const MaintenanceRequestForm = ({ userId }: MaintenanceRequestFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     type: "",
     description: "",
     imageUrl: "",
@@ -27,14 +35,23 @@ export const MaintenanceRequestForm = ({ userId }: MaintenanceRequestFormProps) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.type) {
+      toast({
+        title: "Error",
+        description: "Please select an issue type",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setLoading(true);
 
     try {
       const { error } = await supabase.from("maintenance_requests").insert({
         user_id: userId,
         request_type: formData.type,
-        description: formData.description,
-        image_url: formData.imageUrl,
+        description: formData.description || null,
+        image_url: formData.imageUrl || null,
       });
 
       if (error) throw error;
@@ -70,7 +87,7 @@ export const MaintenanceRequestForm = ({ userId }: MaintenanceRequestFormProps) 
           </label>
           <Select
             value={formData.type}
-            onValueChange={(value) =>
+            onValueChange={(value: RequestType) =>
               setFormData((prev) => ({ ...prev, type: value }))
             }
           >
