@@ -8,6 +8,8 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
 
+export type { CarouselApi }
+
 export type CarouselProps = {
   opts?: CarouselOptions
   plugins?: CarouselPlugin
