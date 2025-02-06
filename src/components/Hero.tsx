@@ -1,6 +1,7 @@
-import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
+import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout, Leaf, LeafyGreen } from "lucide-react";
 import { BenefitCard } from "./hero/BenefitCard";
 import { HeroContent } from "./hero/HeroContent";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   const benefits = [
@@ -51,28 +52,29 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen pt-40 lg:pt-48 bg-white overflow-hidden">
-      {/* Hero Background Pattern */}
-      <div className="absolute inset-0 z-0">
-        {/* Blurred Circles */}
-        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-sage-100/30 rounded-full filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sage-200/20 rounded-full filter blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-sage-50/40 rounded-full filter blur-2xl animate-pulse delay-500" />
-        <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-sage-100/20 rounded-full filter blur-2xl animate-pulse delay-700" />
-        
-        {/* Leaf Patterns */}
-        <div 
-          className="absolute top-0 left-0 w-full h-full opacity-5"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.432 0 0 13.432 0 30c0 16.568 13.432 30 30 30 16.568 0 30-13.432 30-30C60 13.432 46.568 0 30 0zm0 45C21.716 45 15 38.284 15 30S21.716 15 30 15s15 6.716 15 15-6.716 15-15 15z' fill='%232F5E2F' fill-opacity='0.4'/%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}
-        />
-        <div 
-          className="absolute top-0 left-0 w-full h-full opacity-5 rotate-45"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232F5E2F' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '52px 26px'
-          }}
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 0.3, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute top-12 right-10"
+        >
+          <Leaf className="w-20 h-20 text-sage-200" />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 0.2, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="absolute bottom-20 left-10"
+        >
+          <LeafyGreen className="w-24 h-24 text-sage-200" />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-sage-50"
         />
       </div>
       
