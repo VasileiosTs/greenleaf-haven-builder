@@ -2,9 +2,9 @@ export const galleries = [
   {
     title: "Office Spaces",
     images: [
-      "/lovable-uploads/caa9f5af-4bd7-4d1e-976d-66a804666c80.png",
-      "/lovable-uploads/87d8129e-5e04-43db-b965-f63f04f5b480.png",
-      "/lovable-uploads/60c9fafd-8665-4376-ba9d-c834adb992ad.png"
+      "/lovable-uploads/40634c7d-81f5-4a91-9d1c-448290f73c25.png",
+      "/lovable-uploads/1cefb542-1d76-4560-a794-048e3e78f185.png",
+      "/lovable-uploads/caa9f5af-4bd7-4d1e-976d-66a804666c80.png"
     ],
     description: "Modern workspaces enhanced with carefully selected greenery"
   },
