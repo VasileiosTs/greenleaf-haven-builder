@@ -47,9 +47,9 @@ export const galleries = [
   {
     title: "Events & Exhibitions",
     images: [
-      "/lovable-uploads/5c81b962-87c9-4f7c-9f9c-5c834047b95d.png",
-      "/lovable-uploads/5d193498-bb32-46b4-9182-f8ff2e7c2632.png",
-      "/lovable-uploads/fd754747-8679-4e54-8b51-101e2ce3b4f2.png"
+      "/lovable-uploads/45993ef4-3b8d-4a40-8742-1a8ecc4eea62.png",
+      "/lovable-uploads/677dbde0-3aac-4528-abaa-20efbc5bbc2a.png",
+      "/lovable-uploads/055232ae-cf2f-4527-8502-dc86cd2fcbde.png"
     ],
     description: "Transform event spaces with stunning plant displays and arrangements"
   }
