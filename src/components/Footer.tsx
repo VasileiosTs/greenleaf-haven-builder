@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Send, Youtube, } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Send, Youtube } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -52,6 +52,7 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2">
               <li>info@bloomintales.com</li>
+              <li>Athens, Greece</li>
             </ul>
           </div>
           

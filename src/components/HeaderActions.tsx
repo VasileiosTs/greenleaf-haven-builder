@@ -28,7 +28,7 @@ export const HeaderActions = ({ isScrolled, user }: HeaderActionsProps) => {
         <span className="hidden md:inline">info@bloomintales.com</span>
       </a>
 
-      {user ? (
+      {user && (
         <div className="flex items-center space-x-4">
           <Link to="/dashboard">
             <Button 
@@ -46,15 +46,6 @@ export const HeaderActions = ({ isScrolled, user }: HeaderActionsProps) => {
             Sign Out
           </Button>
         </div>
-      ) : (
-        <Link to="/auth">
-          <Button 
-            variant="outline" 
-            className="text-sage-500 border-sage-500 hover:bg-sage-50"
-          >
-            Sign In
-          </Button>
-        </Link>
       )}
     </div>
   );
