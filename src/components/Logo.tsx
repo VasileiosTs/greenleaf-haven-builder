@@ -13,9 +13,12 @@ export const Logo = () => {
           }}
         />
       </div>
-      <span className="text-2xl font-bold text-sage-500 hover:text-sage-600 transition-colors">
-        BloominTales
-      </span>
+      <div className="flex flex-col items-start">
+        <span className="text-2xl font-bold text-sage-500 hover:text-sage-600 transition-colors">
+          BloominTales
+        </span>
+        <span className="text-xs text-sage-400">Premium Plant Leasing</span>
+      </div>
     </Link>
   );
 };
