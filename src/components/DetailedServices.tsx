@@ -1,3 +1,4 @@
+
 import { Building2, Home, UtensilsCrossed, Hotel, Stethoscope, PartyPopper } from "lucide-react";
 
 const services = [
@@ -14,12 +15,12 @@ const services = [
   },
   {
     icon: Home,
-    title: "Airbnb & Short-Term Rental Plant Styling",
-    description: "Give your Airbnb or vacation rental a fresh, inviting look with professionally styled plants. First impressions matter—let your guests enjoy a cozy, green retreat.",
+    title: "Hotels & Airbnb Plant Styling",
+    description: "Give your hotel or Airbnb property a fresh, inviting look with professionally styled plants. First impressions matter—let your guests enjoy a cozy, green retreat.",
     features: [
       "Stylish plant arrangements that elevate your decor",
-      "Hassle-free maintenance for long-term hosts",
-      "Affordable rental plans for short stays"
+      "Hassle-free maintenance for properties",
+      "Affordable rental plans for all property sizes"
     ],
     cta: "Get a Free Design Consultation",
   },

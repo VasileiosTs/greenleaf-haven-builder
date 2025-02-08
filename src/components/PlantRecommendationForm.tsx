@@ -42,9 +42,10 @@ export const PlantRecommendationForm = ({ onSubmit, loading }: PlantRecommendati
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
             <SelectContent className="bg-white">
-              <SelectItem value="Small">Small (10-30m²)</SelectItem>
-              <SelectItem value="Medium">Medium (31-100m²)</SelectItem>
-              <SelectItem value="Large">Large (100m²+)</SelectItem>
+              <SelectItem value="Small">Small Space (up to 50m²)</SelectItem>
+              <SelectItem value="Medium">Medium Space (50-100m²)</SelectItem>
+              <SelectItem value="Large">Large Space (100m²+)</SelectItem>
+              <SelectItem value="Enterprise">Enterprise (Multiple Locations)</SelectItem>
             </SelectContent>
           </Select>
         </div>

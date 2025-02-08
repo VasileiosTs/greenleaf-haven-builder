@@ -1,3 +1,4 @@
+
 import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
 import { BenefitCard } from "./BenefitCard";
 
