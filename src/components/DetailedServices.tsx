@@ -1,72 +1,72 @@
 
-import { Building2, Home, UtensilsCrossed, Hotel, Stethoscope, PartyPopper } from "lucide-react";
+import { Building2, Store, ShoppingBag, Shop, ShoppingCart, ScanBarcode } from "lucide-react";
 
 const services = [
   {
-    icon: Building2,
-    title: "Plant Rentals for Offices & Workspaces",
-    description: "Boost productivity and employee well-being with biophilic design. Our office plant rental service brings greenery into your workspace with minimal effort on your end.",
+    icon: Store,
+    title: "Plant Rentals for Retail Spaces",
+    description: "Enhance your retail environment and create an inviting shopping experience with our carefully curated plant displays. Perfect for boutiques, showrooms, and retail spaces.",
     features: [
-      "Selection of air-purifying plants",
-      "Regular maintenance and replacements",
-      "Custom styling to match your office aesthetic"
+      "Custom plant arrangements for retail spaces",
+      "Regular maintenance and care included",
+      "Seasonal display updates available"
     ],
-    cta: "Request a Quote",
+    cta: "Transform Your Space",
   },
   {
-    icon: Home,
-    title: "Hotels & Airbnb Plant Styling",
-    description: "Give your hotel or Airbnb property a fresh, inviting look with professionally styled plants. First impressions matter—let your guests enjoy a cozy, green retreat.",
+    icon: ShoppingBag,
+    title: "Fashion & Apparel Stores",
+    description: "Create an elevated shopping atmosphere that complements your brand aesthetic. Our plant designs enhance the visual appeal of your fashion retail space.",
     features: [
-      "Stylish plant arrangements that elevate your decor",
-      "Hassle-free maintenance for properties",
-      "Affordable rental plans for all property sizes"
+      "Brand-aligned plant styling",
+      "Flexible rental plans",
+      "Professional installation and maintenance"
     ],
-    cta: "Get a Free Design Consultation",
+    cta: "Elevate Your Store",
   },
   {
-    icon: UtensilsCrossed,
-    title: "Green Touch for Restaurants & Cafés",
-    description: "Create an inviting, nature-infused ambiance that enhances your guests' dining experience. Our expertly curated plant installations complement your space's style.",
+    icon: Shop,
+    title: "Shopping Mall & Department Stores",
+    description: "Transform large retail spaces with stunning plant installations that create memorable shopping environments and improve customer experience.",
     features: [
-      "Indoor & outdoor seating areas",
-      "Seasonal plant styling",
-      "Statement green walls & centerpieces"
-    ],
-    cta: "Let's Make Your Space Stand Out!",
-  },
-  {
-    icon: Hotel,
-    title: "Plant Solutions for Hotels & Hospitality",
-    description: "Enhance your hotel's lobby, suites, and common areas with beautiful, low-maintenance greenery. Our flexible rental service ensures your space remains fresh and welcoming year-round.",
-    features: [
-      "Luxurious plant designs for upscale appeal",
-      "Full maintenance service included",
-      "Scalable solutions for multi-location properties"
+      "Large-scale plant installations",
+      "Custom planters and displays",
+      "Regular maintenance program"
     ],
     cta: "Book a Consultation",
   },
   {
-    icon: Stethoscope,
-    title: "Healthcare Facility Plant Solutions",
-    description: "Create a healing environment with carefully selected plants for hospitals, doctors' offices, and health departments. Our solutions focus on promoting wellness and maintaining strict hygiene standards.",
+    icon: Building2,
+    title: "Pop-up Shops & Markets",
+    description: "Make your temporary retail space stand out with eye-catching plant displays. Perfect for pop-up stores, markets, and temporary retail installations.",
     features: [
-      "Antimicrobial plant selections",
-      "Healthcare-compliant maintenance protocols",
-      "Evidence-based biophilic design"
+      "Short-term rental options",
+      "Quick setup and removal",
+      "Flexible design solutions"
     ],
-    cta: "Schedule Healthcare Consultation",
+    cta: "Plan Your Pop-up",
   },
   {
-    icon: PartyPopper,
-    title: "Event & Special Occasion Greenery",
-    description: "Transform your events with stunning plant arrangements and living decor. Perfect for corporate gatherings, weddings, conferences, and special celebrations.",
+    icon: ShoppingCart,
+    title: "Grocery & Food Retail",
+    description: "Create a fresh and vibrant atmosphere in your grocery store or food retail space with our specialized plant solutions.",
     features: [
-      "Custom event-specific designs",
-      "Short-term and long-term rental options",
-      "Professional setup and removal"
+      "Food-safe plant selections",
+      "Enhance produce departments",
+      "Regular cleaning and maintenance"
     ],
-    cta: "Plan Your Event",
+    cta: "Fresh Up Your Space",
+  },
+  {
+    icon: ScanBarcode,
+    title: "Specialty & Concept Stores",
+    description: "Stand out from the competition with unique plant designs that complement your specialty retail concept and enhance customer experience.",
+    features: [
+      "Concept-specific plant designs",
+      "Custom installation solutions",
+      "Regular maintenance included"
+    ],
+    cta: "Create Your Concept",
   }
 ];
 
@@ -76,7 +76,7 @@ export const DetailedServices = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sage-500">
-            Our Services
+            Our Retail Solutions
           </h2>
           <div className="w-24 h-1 bg-sage-300 mx-auto"></div>
         </div>
@@ -114,3 +114,4 @@ export const DetailedServices = () => {
     </section>
   );
 };
+
