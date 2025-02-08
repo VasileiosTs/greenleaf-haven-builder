@@ -17,25 +17,24 @@ export const HeroContent = ({ onExploreClick }: HeroContentProps) => {
 
   const handleQuizSubmit = (officeSize: string, lighting: string, maintenance: string) => {
     setLoading(true);
-    // Simulate processing time
     setTimeout(() => {
       setLoading(false);
-      onExploreClick(); // Scroll to services section after quiz completion
+      onExploreClick();
     }, 1500);
   };
 
   return (
     <div className="w-full max-w-4xl space-y-12 animate-fade-up">            
-      <div className="text-center space-y-6">
+      <div className="text-left space-y-6">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl lg:text-6xl font-bold text-sage-500 leading-tight"
+          className="text-4xl lg:text-7xl font-bold text-sage-500 leading-tight"
         >
-          Effortless Plant Leasing for Offices & Businesses
-          <span className="block text-3xl lg:text-4xl mt-4 text-sage-400">
-            Green Spaces Made Simple!
+          Transform Your 
+          <span className="block text-sage-400">
+            Workspace with Nature
           </span>
         </motion.h1>
         
@@ -43,9 +42,9 @@ export const HeroContent = ({ onExploreClick }: HeroContentProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sage-400 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto"
+          className="text-sage-400 text-lg lg:text-xl leading-relaxed max-w-2xl"
         >
-          Transform your workspace into a thriving, green environment with our premium 
+          Create a thriving, green environment with our premium 
           plant leasing solutions. Expert care included, zero hassle guaranteed.
         </motion.p>
       </div>
@@ -55,7 +54,7 @@ export const HeroContent = ({ onExploreClick }: HeroContentProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
+          className="flex flex-col sm:flex-row gap-4"
         >
           <Button 
             onClick={() => setShowQuiz(true)}
@@ -80,7 +79,7 @@ export const HeroContent = ({ onExploreClick }: HeroContentProps) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl"
         >
           <PlantRecommendationForm 
             onSubmit={handleQuizSubmit}
