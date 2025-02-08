@@ -69,7 +69,6 @@ const plans = [
     features: [
       "Unlimited premium plants",
       "Custom maintenance schedule",
-      "24/7 plant health monitoring",
       "Priority replacements",
       "Dedicated account manager",
       "Custom plant rotations",
@@ -123,8 +122,8 @@ export const SubscriptionPlans = () => {
                 </div>
               )}
 
-              <div className="p-8">
-                <div>
+              <div className="p-8 flex flex-col h-full">
+                <div className="flex-grow">
                   <h3 className="text-2xl font-bold text-sage-500 mb-2">
                     {plan.name}
                   </h3>
@@ -143,41 +142,41 @@ export const SubscriptionPlans = () => {
                       </span>
                     )}
                   </div>
-                  <p className="text-gray-600">{plan.description}</p>
+                  <p className="text-gray-600 mb-6">{plan.description}</p>
+
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <Check className="w-5 h-5 text-sage-500 mt-1 mr-3 flex-shrink-0" />
+                        <span className="text-gray-600 text-left">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <ul className="space-y-4 my-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="w-5 h-5 text-sage-500 mt-1 mr-3 flex-shrink-0" />
-                      <span className="text-gray-600 text-left">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="mt-auto">
+                  {plan.extraOptions && (
+                    <div className="mb-6 p-4 bg-sage-50 rounded-lg">
+                      <h4 className="font-semibold text-sage-700 mb-2">
+                        {plan.extraOptions.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 mb-2">
+                        {plan.extraOptions.description}
+                      </p>
+                      <p className="text-sage-600 font-medium">
+                        {plan.extraOptions.price === 'Custom' ? (
+                          'Custom pricing'
+                        ) : (
+                          <>+€{plan.extraOptions.price}/month</>
+                        )}
+                      </p>
+                    </div>
+                  )}
 
-              <div className="mt-auto p-8 pt-0">
-                {plan.extraOptions && (
-                  <div className="mb-8 p-4 bg-sage-50 rounded-lg">
-                    <h4 className="font-semibold text-sage-700 mb-2">
-                      {plan.extraOptions.name}
-                    </h4>
-                    <p className="text-sm text-gray-600 mb-2">
-                      {plan.extraOptions.description}
-                    </p>
-                    <p className="text-sage-600 font-medium">
-                      {plan.extraOptions.price === 'Custom' ? (
-                        'Custom pricing'
-                      ) : (
-                        <>+€{plan.extraOptions.price}/month</>
-                      )}
-                    </p>
-                  </div>
-                )}
-
-                <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
-                  Start Your Green Office
-                </Button>
+                  <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
+                    Start Your Green Office
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
