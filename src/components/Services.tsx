@@ -1,36 +1,73 @@
-import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
+
+import { Building2, Home, Utensils, Building, HeartPulse, PartyPopper } from "lucide-react";
 
 export const Services = () => {
   const services = [
     {
       icon: Building2,
-      title: "Offices",
-      description: "Boost productivity and create a calming workspace"
-    },
-    {
-      icon: ShoppingBag,
-      title: "Retail",
-      description: "Enhance customer experience and store aesthetics"
-    },
-    {
-      icon: HeartPulse,
-      title: "Healthcare",
-      description: "Promote healing and reduce stress levels"
+      title: "Plant Rentals for Offices & Workspaces",
+      description: "Boost productivity and employee well-being with biophilic design. Our office plant rental service brings greenery into your workspace with minimal effort on your end.",
+      features: [
+        "Selection of air-purifying plants",
+        "Regular maintenance and replacements",
+        "Custom styling to match your office aesthetic"
+      ],
+      cta: "Request a Quote"
     },
     {
       icon: Home,
-      title: "Hotels & Airbnb",
-      description: "Create welcoming and luxurious environments"
+      title: "Airbnb & Short-Term Rental Plant Styling",
+      description: "Give your Airbnb or vacation rental a fresh, inviting look with professionally styled plants. First impressions matter—let your guests enjoy a cozy, green retreat.",
+      features: [
+        "Stylish plant arrangements that elevate your decor",
+        "Hassle-free maintenance for long-term hosts",
+        "Affordable rental plans for short stays"
+      ],
+      cta: "Get a Free Design Consultation"
     },
     {
-      icon: Sprout,
-      title: "Restaurants",
-      description: "Add natural ambiance to dining spaces"
+      icon: Utensils,
+      title: "Green Touch for Restaurants & Cafés",
+      description: "Create an inviting, nature-infused ambiance that enhances your guests' dining experience. Our expertly curated plant installations complement your space's style.",
+      features: [
+        "Indoor & outdoor seating areas",
+        "Seasonal plant styling",
+        "Statement green walls & centerpieces"
+      ],
+      cta: "Let's Make Your Space Stand Out!"
     },
     {
-      icon: TreePine,
-      title: "Corporate",
-      description: "Improve air quality and employee wellbeing"
+      icon: Building,
+      title: "Plant Solutions for Hotels & Hospitality",
+      description: "Enhance your hotel's lobby, suites, and common areas with beautiful, low-maintenance greenery. Our flexible rental service ensures your space remains fresh and welcoming year-round.",
+      features: [
+        "Luxurious plant designs for upscale appeal",
+        "Full maintenance service included",
+        "Scalable solutions for multi-location properties"
+      ],
+      cta: "Book a Consultation"
+    },
+    {
+      icon: HeartPulse,
+      title: "Healthcare Facility Plant Solutions",
+      description: "Create a healing environment with carefully selected plants for hospitals, doctors' offices, and health departments. Our solutions focus on promoting wellness and maintaining strict hygiene standards.",
+      features: [
+        "Antimicrobial plant selections",
+        "Healthcare-compliant maintenance protocols",
+        "Evidence-based biophilic design"
+      ],
+      cta: "Schedule Healthcare Consultation"
+    },
+    {
+      icon: PartyPopper,
+      title: "Event & Special Occasion Greenery",
+      description: "Transform your events with stunning plant arrangements and living decor. Perfect for corporate gatherings, weddings, conferences, and special celebrations.",
+      features: [
+        "Custom event-specific designs",
+        "Short-term and long-term rental options",
+        "Professional setup and removal"
+      ],
+      cta: "Plan Your Event"
     }
   ];
 
@@ -38,14 +75,25 @@ export const Services = () => {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-sage-50 p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <service.icon className="w-8 h-8 text-sage-500" />
-                <h3 className="text-xl font-semibold ml-2">{service.title}</h3>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-4">
+                <service.icon className="w-6 h-6 text-sage-500" />
+                <h3 className="text-xl font-semibold">{service.title}</h3>
               </div>
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-gray-600 mb-6">{service.description}</p>
+              <div className="space-y-3 mb-6">
+                {service.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <span className="text-sage-500">✓</span>
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="w-full py-3 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">
+                {service.cta}
+              </button>
             </div>
           ))}
         </div>
