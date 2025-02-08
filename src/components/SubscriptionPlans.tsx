@@ -108,7 +108,7 @@ export const SubscriptionPlans = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-2xl p-8 ${
+              className={`relative rounded-2xl p-8 flex flex-col h-full ${
                 plan.popular
                   ? "bg-sage-50 border-2 border-sage-300"
                   : "bg-white border border-gray-200"
@@ -123,12 +123,12 @@ export const SubscriptionPlans = () => {
                 </div>
               )}
 
-              <div className="text-center mb-8">
+              <div className="text-center flex-grow">
                 <h3 className="text-2xl font-bold text-sage-500 mb-2">
                   {plan.name}
                 </h3>
                 <div className="text-gray-600 mb-4">{plan.spaceSize}</div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mb-4">
                   {typeof plan.price === 'number' ? (
                     <>
                       <span className="text-4xl font-bold text-sage-500">
@@ -142,20 +142,20 @@ export const SubscriptionPlans = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-gray-600 mt-4">{plan.description}</p>
+                <p className="text-gray-600">{plan.description}</p>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 my-8">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start group">
-                    <Check className="w-5 h-5 text-sage-500 mt-1 mr-2 flex-shrink-0" />
-                    <span className="text-gray-600">{feature}</span>
+                  <li key={idx} className="flex items-start">
+                    <Check className="w-5 h-5 text-sage-500 mt-1 mr-3 flex-shrink-0" />
+                    <span className="text-gray-600 text-left">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {plan.extraOptions && (
-                <div className="mb-8 p-4 bg-sage-50 rounded-lg transform transition-all duration-300 hover:scale-105">
+                <div className="mb-8 p-4 bg-sage-50 rounded-lg">
                   <h4 className="font-semibold text-sage-700 mb-2">
                     {plan.extraOptions.name}
                   </h4>
@@ -172,14 +172,16 @@ export const SubscriptionPlans = () => {
                 </div>
               )}
 
-              <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
-                Start Your Green Office
-              </Button>
+              <div className="mt-auto">
+                <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
+                  Start Your Green Office
+                </Button>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 md:col-span-4">
+        <div className="mt-16">
           <div className="rounded-2xl p-8 bg-white border border-gray-200 shadow-lg">
             <div className="md:flex md:items-center md:justify-between">
               <div className="mb-6 md:mb-0 md:mr-8">
@@ -204,3 +206,4 @@ export const SubscriptionPlans = () => {
     </section>
   );
 };
+
