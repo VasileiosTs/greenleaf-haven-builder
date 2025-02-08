@@ -1,3 +1,4 @@
+
 import { Check } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -90,7 +91,7 @@ export const SubscriptionPlans = () => {
                 plan.popular
                   ? "bg-sage-50 border-2 border-sage-300"
                   : "bg-white border border-gray-200"
-              } shadow-lg animate-fade-up`}
+              } shadow-lg animate-fade-up group hover:shadow-xl transition-all duration-300`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {plan.popular && (
@@ -117,7 +118,7 @@ export const SubscriptionPlans = () => {
 
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
+                  <li key={idx} className="flex items-start group">
                     <Check className="w-5 h-5 text-sage-500 mt-1 mr-2 flex-shrink-0" />
                     <span className="text-gray-600">{feature}</span>
                   </li>
@@ -125,7 +126,7 @@ export const SubscriptionPlans = () => {
               </ul>
 
               {plan.extraOptions && (
-                <div className="mb-8 p-4 bg-sage-50 rounded-lg">
+                <div className="mb-8 p-4 bg-sage-50 rounded-lg transform transition-all duration-300 hover:scale-105">
                   <h4 className="font-semibold text-sage-700 mb-2">
                     {plan.extraOptions.name}
                   </h4>
