@@ -72,26 +72,40 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-gradient-to-b from-white to-sage-50">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-sage-600 mb-4">Our Services</h2>
+          <p className="text-sage-600/80 text-lg max-w-2xl mx-auto">
+            Transforming spaces with the perfect blend of nature and design
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <service.icon className="w-6 h-6 text-sage-500" />
-                <h3 className="text-xl font-semibold">{service.title}</h3>
+            <div 
+              key={index} 
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-sage-100 hover:border-sage-200"
+            >
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-sage-100 group-hover:bg-sage-200 transition-colors duration-300">
+                  <service.icon className="w-7 h-7 text-sage-600" />
+                </div>
               </div>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <div className="space-y-3 mb-6">
+              <h3 className="text-xl font-semibold text-sage-800 mb-4 group-hover:text-sage-600 transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-sage-600/80 mb-6 text-sm leading-relaxed">
+                {service.description}
+              </p>
+              <ul className="space-y-3 mb-8">
                 {service.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <span className="text-sage-500">✓</span>
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
+                  <li key={idx} className="flex items-start gap-2 text-sm">
+                    <span className="text-sage-500 mt-1">✓</span>
+                    <span className="text-sage-700">{feature}</span>
+                  </li>
                 ))}
-              </div>
-              <button className="w-full py-3 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">
+              </ul>
+              <button className="w-full py-3 px-6 bg-sage-600 text-white rounded-xl hover:bg-sage-700 transition-colors duration-300 text-sm font-medium shadow-sm hover:shadow-md">
                 {service.cta}
               </button>
             </div>
