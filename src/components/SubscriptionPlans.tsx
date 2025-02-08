@@ -61,6 +61,27 @@ const plans = [
       price: "60",
       description: "Add luxury seasonal flowers and weekly custom bouquets"
     }
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "Tailored solutions for businesses with multiple locations",
+    features: [
+      "Unlimited premium plants",
+      "Custom maintenance schedule",
+      "24/7 plant health monitoring",
+      "Priority replacements",
+      "Dedicated account manager",
+      "Custom plant rotations",
+      "Multi-location management",
+      "Branded plant displays"
+    ],
+    spaceSize: "Multiple Locations",
+    extraOptions: {
+      name: "Enterprise Flowering Program",
+      price: "Custom",
+      description: "Fully customized flowering program for all locations"
+    }
   }
 ];
 
@@ -83,7 +104,7 @@ export const SubscriptionPlans = () => {
           <div className="w-24 h-1 bg-sage-300 mx-auto mt-8"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -108,10 +129,18 @@ export const SubscriptionPlans = () => {
                 </h3>
                 <div className="text-gray-600 mb-4">{plan.spaceSize}</div>
                 <div className="flex items-center justify-center">
-                  <span className="text-4xl font-bold text-sage-500">
-                    €{plan.price}
-                  </span>
-                  <span className="text-gray-500 ml-2">/month</span>
+                  {typeof plan.price === 'number' ? (
+                    <>
+                      <span className="text-4xl font-bold text-sage-500">
+                        €{plan.price}
+                      </span>
+                      <span className="text-gray-500 ml-2">/month</span>
+                    </>
+                  ) : (
+                    <span className="text-4xl font-bold text-sage-500">
+                      {plan.price}
+                    </span>
+                  )}
                 </div>
                 <p className="text-gray-600 mt-4">{plan.description}</p>
               </div>
@@ -134,7 +163,11 @@ export const SubscriptionPlans = () => {
                     {plan.extraOptions.description}
                   </p>
                   <p className="text-sage-600 font-medium">
-                    +€{plan.extraOptions.price}/month
+                    {plan.extraOptions.price === 'Custom' ? (
+                      'Custom pricing'
+                    ) : (
+                      <>+€{plan.extraOptions.price}/month</>
+                    )}
                   </p>
                 </div>
               )}
@@ -146,7 +179,7 @@ export const SubscriptionPlans = () => {
           ))}
         </div>
 
-        <div className="mt-8 md:col-span-3">
+        <div className="mt-8 md:col-span-4">
           <div className="rounded-2xl p-8 bg-white border border-gray-200 shadow-lg">
             <div className="md:flex md:items-center md:justify-between">
               <div className="mb-6 md:mb-0 md:mr-8">
