@@ -1,7 +1,6 @@
 
-import { Check } from "lucide-react";
-import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PlanCard } from "./subscription/PlanCard";
 
 const plans = [
   {
@@ -105,105 +104,11 @@ export const SubscriptionPlans = () => {
 
         <div className="grid md:grid-cols-4 gap-8">
           {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative flex flex-col rounded-2xl ${
-                plan.popular
-                  ? "bg-sage-50 border-2 border-sage-300"
-                  : "bg-white border border-gray-200"
-              } shadow-lg animate-fade-up group hover:shadow-xl transition-all duration-300`}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-sage-500 text-white px-4 py-1 rounded-full text-sm">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              <div className="p-8 flex flex-col h-full">
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-sage-500 mb-2">
-                    {plan.name}
-                  </h3>
-                  <div className="text-gray-600 mb-4">{plan.spaceSize}</div>
-                  <div className="flex items-center mb-4">
-                    {typeof plan.price === 'number' ? (
-                      <>
-                        <span className="text-4xl font-bold text-sage-500">
-                          €{plan.price}
-                        </span>
-                        <span className="text-gray-500 ml-2">/month</span>
-                      </>
-                    ) : (
-                      <span className="text-4xl font-bold text-sage-500">
-                        {plan.price}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
-
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <Check className="w-5 h-5 text-sage-500 mt-1 mr-3 flex-shrink-0" />
-                        <span className="text-gray-600 text-left">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-auto">
-                  {plan.extraOptions && (
-                    <div className="mb-6 p-4 bg-sage-50 rounded-lg">
-                      <h4 className="font-semibold text-sage-700 mb-2">
-                        {plan.extraOptions.name}
-                      </h4>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {plan.extraOptions.description}
-                      </p>
-                      <p className="text-sage-600 font-medium">
-                        {plan.extraOptions.price === 'Custom' ? (
-                          'Custom pricing'
-                        ) : (
-                          <>+€{plan.extraOptions.price}/month</>
-                        )}
-                      </p>
-                    </div>
-                  )}
-
-                  <Button className="w-full bg-sage-500 text-white hover:bg-sage-600 transition-colors duration-200">
-                    Start Your Green Office
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <PlanCard key={index} plan={plan} />
           ))}
-        </div>
-
-        <div className="mt-16">
-          <div className="rounded-2xl p-8 bg-white border border-gray-200 shadow-lg">
-            <div className="md:flex md:items-center md:justify-between">
-              <div className="mb-6 md:mb-0 md:mr-8">
-                <h3 className="text-2xl font-bold text-sage-500 mb-4">
-                  {t('subscriptions.plans.enterprise.title')}
-                </h3>
-                <p className="text-gray-600 max-w-2xl">
-                  {t('subscriptions.plans.enterprise.description')}
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <Button 
-                  className="w-full md:w-auto bg-sage-500 text-white hover:bg-sage-600"
-                >
-                  {t('subscriptions.plans.enterprise.cta')}
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
   );
 };
+
