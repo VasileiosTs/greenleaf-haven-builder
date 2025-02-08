@@ -1,5 +1,5 @@
 
-import { ArrowRight, Plant } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { PlantRecommendationForm } from "@/components/PlantRecommendationForm";
@@ -62,7 +62,6 @@ export const HeroContent = ({ onExploreClick }: HeroContentProps) => {
             className="bg-sage-500 text-white hover:bg-sage-600 transition-all duration-300 transform hover:scale-105"
             size="lg"
           >
-            <Plant className="mr-2 h-5 w-5" />
             Find Your Perfect Plant Package
           </Button>
           
