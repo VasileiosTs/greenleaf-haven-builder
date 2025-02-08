@@ -16,7 +16,7 @@ export const Hero = () => {
       <DecorativeElements />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col items-center justify-center gap-12 lg:gap-16">
           <HeroContent onExploreClick={handleExploreClick} />
         </div>
         <BenefitsGrid />
