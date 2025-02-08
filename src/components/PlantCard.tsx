@@ -12,20 +12,34 @@ export const PlantCard = ({ plant }: { plant: Plant }) => {
       <div className="relative h-48">
         <img
           src={plant.image_url || "/placeholder.svg"}
-          alt={plant.name}
+          alt={`${plant.name} - Office Plant`}
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" 
+             aria-hidden="true" />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-sage-500">{plant.name}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{plant.description}</p>
-        <div className="mb-4">
+        <h3 className="text-xl font-semibold mb-2 text-sage-500">
+          {plant.name}
+        </h3>
+        <p className="text-gray-600 mb-4 line-clamp-2">
+          {plant.description}
+        </p>
+        <div className="mb-4" role="list" aria-label="Plant benefits">
           <h4 className="font-medium mb-2 text-sage-500">Benefits:</h4>
           <ul className="space-y-1">
             {plant.benefits?.map((benefit, index) => (
-              <li key={index} className="text-gray-600 text-sm flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-sage-300 mr-2" />
+              <li 
+                key={index} 
+                className="text-gray-600 text-sm flex items-center"
+                role="listitem"
+              >
+                <span 
+                  className="w-1.5 h-1.5 rounded-full bg-sage-300 mr-2" 
+                  aria-hidden="true"
+                />
                 {benefit}
               </li>
             ))}
@@ -33,6 +47,7 @@ export const PlantCard = ({ plant }: { plant: Plant }) => {
         </div>
         <Button 
           className="w-full bg-sage-500 hover:bg-sage-600 transition-all duration-200 transform hover:scale-105"
+          aria-label={`Lease ${plant.name}`}
         >
           Lease Now
         </Button>

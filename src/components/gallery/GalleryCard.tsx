@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Carousel,
@@ -26,28 +27,30 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="relative w-full">
-        <Carousel className="w-full">
+        <Carousel className="w-full" aria-label={`${title} gallery`}>
           <CarouselContent>
             {images.map((image, idx) => (
               <CarouselItem key={idx}>
                 <div className="aspect-[4/3]">
                   <img
                     src={image}
-                    alt={`${title} ${idx + 1}`}
+                    alt={`${title} transformation image ${idx + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <div className="absolute inset-0 flex items-center justify-between p-4">
-            <CarouselPrevious className="relative" />
-            <CarouselNext className="relative" />
+            <CarouselPrevious className="relative" aria-label="Previous image" />
+            <CarouselNext className="relative" aria-label="Next image" />
           </div>
         </Carousel>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold mb-2 text-sage-500">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
     </div>
