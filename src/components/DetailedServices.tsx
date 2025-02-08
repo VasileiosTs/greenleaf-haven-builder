@@ -1,5 +1,5 @@
 
-import { Building2, Store, ShoppingBag, Shop, ShoppingCart, ScanBarcode } from "lucide-react";
+import { Building2, Store, ShoppingBag, ShoppingCart, ScanBarcode } from "lucide-react";
 
 const services = [
   {
@@ -25,7 +25,7 @@ const services = [
     cta: "Elevate Your Store",
   },
   {
-    icon: Shop,
+    icon: Store,
     title: "Shopping Mall & Department Stores",
     description: "Transform large retail spaces with stunning plant installations that create memorable shopping environments and improve customer experience.",
     features: [
