@@ -1,5 +1,5 @@
 
-import { Building2, HeartPulse, ShoppingBag, Home, TreePine, Sprout } from "lucide-react";
+import { Building2, HeartPulse, ShoppingBag, Home, TreePine, PartyPopper } from "lucide-react";
 import { BenefitCard } from "./BenefitCard";
 
 const benefits = [
@@ -29,14 +29,14 @@ const benefits = [
   },
   {
     icon: TreePine,
-    title: "Restaurants",
-    description: "Add natural ambiance to dining spaces",
+    title: "Café & Restaurants",
+    description: "Create an inviting dining atmosphere with natural elements",
     image: "/lovable-uploads/5c81b962-87c9-4f7c-9f9c-5c834047b95d.png"
   },
   {
-    icon: Sprout,
-    title: "Café",
-    description: "Create cozy atmosphere for customers",
+    icon: PartyPopper,
+    title: "Events",
+    description: "Transform special occasions with stunning greenery",
     image: "/lovable-uploads/986a6649-f6ad-4f66-946e-addd5d1a5e7e.png"
   }
 ];

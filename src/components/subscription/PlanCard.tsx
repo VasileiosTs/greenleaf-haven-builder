@@ -30,8 +30,8 @@ export const PlanCard = ({ plan }: PlanCardProps) => {
       } shadow-lg animate-fade-up group hover:shadow-xl transition-all duration-300`}
     >
       {plan.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-sage-500 text-white px-4 py-1 rounded-full text-sm">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          <span className="bg-sage-500 text-white px-6 py-1.5 rounded-full text-sm font-medium">
             Most Popular
           </span>
         </div>
@@ -70,4 +70,3 @@ export const PlanCard = ({ plan }: PlanCardProps) => {
     </div>
   );
 };
-
